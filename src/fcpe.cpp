@@ -229,6 +229,20 @@ struct Model::Impl {
     ggml_tensor * depthwise(ggml_context * ctx, ggml_tensor * x, const std::string & prefix) {
         auto * w = tensor(prefix + ".weight");
         if (optimize_graph) {
+#ifdef FCPE_METAL_OPTIMIZED
+            if (std::string(ggml_backend_name(primary.get())).find("MTL") == 0 && !std::getenv("FCPE_METAL_LEGACY_DW_LAYOUT")) {
+                auto * kernel = ggml_reshape_4d(ctx, w, 31, 1, 1, x->ne[0]);
+                auto * view = ggml_permute(ctx, ggml_reshape_4d(ctx, x, x->ne[0], x->ne[1], 1, 1), 2, 0, 1, 3);
+                auto * y = ggml_conv_2d_dw_direct(ctx, kernel, view, 1, 1, 15, 0, 1, 1);
+                // Preserve the logical WHCN shape with channels contiguous in memory.
+                y->nb[0] = sizeof(float) * x->ne[0];
+                y->nb[1] = y->nb[0] * x->ne[1];
+                y->nb[2] = sizeof(float);
+                y->nb[3] = y->nb[1];
+                y = ggml_reshape_2d(ctx, ggml_permute(ctx, y, 1, 2, 0, 3), x->ne[0], x->ne[1]);
+                return ggml_add(ctx, y, tensor(prefix + ".bias"));
+            }
+#endif
             // Direct convolution avoids a 31x im2col expansion and 1024 tiny
             // per-channel GEMMs. WHCN also supports singleton time dimensions.
             auto * kernel = ggml_reshape_4d(ctx, w, 31, 1, 1, x->ne[0]);
@@ -278,10 +292,12 @@ struct Model::Impl {
             // PyTorch GLU: first half * sigmoid(second half), split on channels.
             auto * a = ggml_view_2d(ctx, y, 2 * h, t, y->nb[1], 0);
             auto * b = ggml_view_2d(ctx, y, 2 * h, t, y->nb[1], 2 * h * sizeof(float));
-            // Vulkan unary/binary shaders accept row strides. Other backends
-            // keep the proven contiguous path; retain the old graph for A/B.
-            if (!optimize_graph || std::string(ggml_backend_name(primary.get())).find("Vulkan") != 0 ||
-                std::getenv("FCPE_VK_LEGACY_GRAPH")) {
+            const std::string backend = ggml_backend_name(primary.get());
+            bool strided_glu = backend.find("Vulkan") == 0 && !std::getenv("FCPE_VK_LEGACY_GRAPH");
+#ifdef FCPE_METAL_OPTIMIZED
+            strided_glu |= backend.find("MTL") == 0 && !std::getenv("FCPE_METAL_LEGACY_GRAPH");
+#endif
+            if (!optimize_graph || !strided_glu) {
                 a = ggml_cont(ctx, a);
                 b = ggml_cont(ctx, b);
             }

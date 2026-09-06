@@ -9,6 +9,8 @@ FCPE.cpp's own contributions are licensed under [MPL-2.0](LICENSE). The followin
 - [librosa](https://github.com/librosa/librosa), ISC. FCPE's `mel_fn_librosa.py` identifies `librosa.filters` as its source; the converter implements the corresponding Slaney filterbank. The license from librosa 0.10.1 is retained in [licenses/librosa-ISC.txt](licenses/librosa-ISC.txt).
 - The optional real-speech validation sample is [whisper.cpp/samples/jfk.wav](https://github.com/ggml-org/whisper.cpp/blob/master/samples/jfk.wav); it is a test artifact in `validation/`, not part of the source distribution.
 
+The default strict-F32 Metal build generates source copies via `cmake/MetalPrecision.cmake`. It specializes ggml's existing MIT-licensed SIMD-group matrix algorithm for float operands and adds project kernels for copies, im2col, depthwise convolution, GroupNorm and projection/activation fusion in `src/metal/`. The merged shader is embedded. Original ggml sources and notices are preserved; the build integration and project kernels are MPL-2.0. No vocoder-specific Metal patch is imported. See [METAL.md](docs/METAL.md).
+
 Python dependencies are used only to convert and validate the model. Native inference links ggml and embeds pocketfft; it does not invoke Python, PyTorch, or ONNX Runtime.
 
 The pinned ggml MIT notice is also retained in [licenses/ggml-MIT.txt](licenses/ggml-MIT.txt). Generated Vulkan source copies retain upstream notices. This project's build patches and fusion code use MPL-2.0; the reference vocoder's separately dual-licensed patch directory and its model-specific non-commercial conditions are not imported here.

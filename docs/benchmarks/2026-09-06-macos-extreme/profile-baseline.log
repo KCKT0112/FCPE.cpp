@@ -1,0 +1,418 @@
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.026 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0 (Apple M4)
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 19069.67 MB
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+FCPE_METAL_PROFILE_BEGIN nodes=174
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_cpy_f32_f32', name = 'kernel_cpy_f32_f32'
+ggml_metal_library_compile_pipeline: loaded kernel_cpy_f32_f32                            0x1053aaea0 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=3 op=CONT shape=1101,128,1,1 gpu_ms=2.068875 name=mel_input (transposed) (cont)
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_im2col_f32', name = 'kernel_im2col_f32'
+ggml_metal_library_compile_pipeline: loaded kernel_im2col_f32                             0x1053ab720 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=4 op=IM2COL shape=384,1101,1,1 gpu_ms=1.309167 name=node_4
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_fcpe_mul_mm_f32_f32', name = 'kernel_fcpe_mul_mm_f32_f32_bci=0_bco=1_ne12=1_ne13=1_r2=1_r3=1'
+ggml_metal_library_compile_pipeline: loaded kernel_fcpe_mul_mm_f32_f32_bci=0_bco=1_ne12=1_ne13=1_r2=1_r3=1      0x1053ac620 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=6 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.253417 name=node_6
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_bin_fuse_f32_f32_f32_4', name = 'kernel_bin_fuse_f32_f32_f32_4_op=0_nf=1_rb=0_cb=0'
+ggml_metal_library_compile_pipeline: loaded kernel_bin_fuse_f32_f32_f32_4_op=0_nf=1_rb=0_cb=0      0x1053adee0 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=7 op=ADD shape=512,1101,1,1 gpu_ms=0.039333 name=node_7
+FCPE_METAL_PROFILE index=9 op=CONT shape=1101,512,1,1 gpu_ms=0.379250 name= (transposed) (cont)
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_group_norm_f32', name = 'kernel_group_norm_f32'
+ggml_metal_library_compile_pipeline: loaded kernel_group_norm_f32                        0x7b9ceb4380 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=11 op=GROUP_NORM shape=1101,1,512,1 gpu_ms=3.888667 name=node_11
+FCPE_METAL_PROFILE index=14 op=CONT shape=512,1101,1,1 gpu_ms=0.300333 name= (reshaped) (transposed) (cont)
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_bin_fuse_f32_f32_f32_4', name = 'kernel_bin_fuse_f32_f32_f32_4_op=2_nf=1_rb=0_cb=0'
+ggml_metal_library_compile_pipeline: loaded kernel_bin_fuse_f32_f32_f32_4_op=2_nf=1_rb=0_cb=0     0x7b9ceb4700 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=15 op=MUL shape=512,1101,1,1 gpu_ms=0.025542 name=node_15
+FCPE_METAL_PROFILE index=16 op=ADD shape=512,1101,1,1 gpu_ms=0.025208 name=node_16
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_unary_f32_f32_4', name = 'kernel_unary_f32_f32_4_op=18_cnt=0'
+ggml_metal_library_compile_pipeline: loaded kernel_unary_f32_f32_4_op=18_cnt=0           0x7b9ceb4a80 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=17 op=LEAKY_RELU shape=512,1101,1,1 gpu_ms=0.024958 name=node_17
+FCPE_METAL_PROFILE index=19 op=CONT shape=1101,512,1,1 gpu_ms=0.377750 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=21 op=IM2COL shape=1536,1101,1,1 gpu_ms=3.294417 name=node_20
+FCPE_METAL_PROFILE index=23 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.843125 name=node_22
+FCPE_METAL_PROFILE index=24 op=ADD shape=512,1101,1,1 gpu_ms=0.045125 name=node_23
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_norm_f32_4', name = 'kernel_norm_f32_4'
+ggml_metal_library_compile_pipeline: loaded kernel_norm_f32_4                            0x7b9ceb4e00 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=25 op=NORM shape=512,1101,1,1 gpu_ms=0.099417 name=node_25
+FCPE_METAL_PROFILE index=26 op=MUL shape=512,1101,1,1 gpu_ms=0.055167 name=node_26
+FCPE_METAL_PROFILE index=27 op=ADD shape=512,1101,1,1 gpu_ms=0.055750 name=node_27
+FCPE_METAL_PROFILE index=28 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=3.445500 name=node_28
+FCPE_METAL_PROFILE index=29 op=ADD shape=2048,1101,1,1 gpu_ms=0.166792 name=node_29
+FCPE_METAL_PROFILE index=31 op=CONT shape=1024,1101,1,1 gpu_ms=2.001625 name= (view) (cont)
+FCPE_METAL_PROFILE index=33 op=CONT shape=1024,1101,1,1 gpu_ms=2.008625 name= (view) (cont)
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_unary_f32_f32_4', name = 'kernel_unary_f32_f32_4_op=102_cnt=0'
+ggml_metal_library_compile_pipeline: loaded kernel_unary_f32_f32_4_op=102_cnt=0          0x7b9ceb5180 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=34 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.113125 name=node_34
+FCPE_METAL_PROFILE index=35 op=MUL shape=1024,1101,1,1 gpu_ms=0.154458 name=node_35
+FCPE_METAL_PROFILE index=37 op=CONT shape=1101,1024,1,1 gpu_ms=2.129125 name= (transposed) (cont)
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_conv_2d_dw_f32_f32', name = 'kernel_conv_2d_dw_f32_f32'
+ggml_metal_library_compile_pipeline: loaded kernel_conv_2d_dw_f32_f32                    0x7b9ceb5500 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=40 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=3.350375 name=node_39
+FCPE_METAL_PROFILE index=43 op=CONT shape=1024,1101,1,1 gpu_ms=1.993792 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=44 op=ADD shape=1024,1101,1,1 gpu_ms=0.097125 name=node_43
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_unary_f32_f32_4', name = 'kernel_unary_f32_f32_4_op=106_cnt=0'
+ggml_metal_library_compile_pipeline: loaded kernel_unary_f32_f32_4_op=106_cnt=0          0x7b9ceb5880 | th_max = 1024 | th_width =   32
+FCPE_METAL_PROFILE index=45 op=SILU shape=1024,1101,1,1 gpu_ms=0.119208 name=node_44
+FCPE_METAL_PROFILE index=46 op=MUL_MAT shape=512,1101,1,1 gpu_ms=1.737000 name=node_45
+FCPE_METAL_PROFILE index=47 op=ADD shape=512,1101,1,1 gpu_ms=0.039500 name=node_46
+FCPE_METAL_PROFILE index=48 op=ADD shape=512,1101,1,1 gpu_ms=0.073125 name=node_47
+FCPE_METAL_PROFILE index=49 op=NORM shape=512,1101,1,1 gpu_ms=0.041458 name=node_49
+FCPE_METAL_PROFILE index=50 op=MUL shape=512,1101,1,1 gpu_ms=0.033083 name=node_50
+FCPE_METAL_PROFILE index=51 op=ADD shape=512,1101,1,1 gpu_ms=0.030583 name=node_51
+FCPE_METAL_PROFILE index=52 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=2.854375 name=node_52
+FCPE_METAL_PROFILE index=53 op=ADD shape=2048,1101,1,1 gpu_ms=0.173792 name=node_53
+FCPE_METAL_PROFILE index=55 op=CONT shape=1024,1101,1,1 gpu_ms=2.058958 name= (view) (cont)
+FCPE_METAL_PROFILE index=57 op=CONT shape=1024,1101,1,1 gpu_ms=1.105542 name= (view) (cont)
+FCPE_METAL_PROFILE index=58 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.085083 name=node_58
+FCPE_METAL_PROFILE index=59 op=MUL shape=1024,1101,1,1 gpu_ms=0.122292 name=node_59
+FCPE_METAL_PROFILE index=61 op=CONT shape=1101,1024,1,1 gpu_ms=1.871750 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=64 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=2.618708 name=node_63
+FCPE_METAL_PROFILE index=67 op=CONT shape=1024,1101,1,1 gpu_ms=1.102375 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=68 op=ADD shape=1024,1101,1,1 gpu_ms=0.062500 name=node_67
+FCPE_METAL_PROFILE index=69 op=SILU shape=1024,1101,1,1 gpu_ms=0.063042 name=node_68
+FCPE_METAL_PROFILE index=70 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.952875 name=node_69
+FCPE_METAL_PROFILE index=71 op=ADD shape=512,1101,1,1 gpu_ms=0.058375 name=node_70
+FCPE_METAL_PROFILE index=72 op=ADD shape=512,1101,1,1 gpu_ms=0.090125 name=node_71
+FCPE_METAL_PROFILE index=73 op=NORM shape=512,1101,1,1 gpu_ms=0.078750 name=node_73
+FCPE_METAL_PROFILE index=74 op=MUL shape=512,1101,1,1 gpu_ms=0.058375 name=node_74
+FCPE_METAL_PROFILE index=75 op=ADD shape=512,1101,1,1 gpu_ms=0.055708 name=node_75
+FCPE_METAL_PROFILE index=76 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=1.927875 name=node_76
+FCPE_METAL_PROFILE index=77 op=ADD shape=2048,1101,1,1 gpu_ms=1.129250 name=node_77
+FCPE_METAL_PROFILE index=79 op=CONT shape=1024,1101,1,1 gpu_ms=1.099542 name= (view) (cont)
+FCPE_METAL_PROFILE index=81 op=CONT shape=1024,1101,1,1 gpu_ms=1.100750 name= (view) (cont)
+FCPE_METAL_PROFILE index=82 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.065125 name=node_82
+FCPE_METAL_PROFILE index=83 op=MUL shape=1024,1101,1,1 gpu_ms=0.139583 name=node_83
+FCPE_METAL_PROFILE index=85 op=CONT shape=1101,1024,1,1 gpu_ms=1.169833 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=88 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=1.808917 name=node_87
+FCPE_METAL_PROFILE index=91 op=CONT shape=1024,1101,1,1 gpu_ms=0.859625 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=92 op=ADD shape=1024,1101,1,1 gpu_ms=0.054375 name=node_91
+FCPE_METAL_PROFILE index=93 op=SILU shape=1024,1101,1,1 gpu_ms=0.052458 name=node_92
+FCPE_METAL_PROFILE index=94 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.750125 name=node_93
+FCPE_METAL_PROFILE index=95 op=ADD shape=512,1101,1,1 gpu_ms=0.038500 name=node_94
+FCPE_METAL_PROFILE index=96 op=ADD shape=512,1101,1,1 gpu_ms=0.055167 name=node_95
+FCPE_METAL_PROFILE index=97 op=NORM shape=512,1101,1,1 gpu_ms=0.045125 name=node_97
+FCPE_METAL_PROFILE index=98 op=MUL shape=512,1101,1,1 gpu_ms=0.034250 name=node_98
+FCPE_METAL_PROFILE index=99 op=ADD shape=512,1101,1,1 gpu_ms=0.030875 name=node_99
+FCPE_METAL_PROFILE index=100 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=1.902500 name=node_100
+FCPE_METAL_PROFILE index=101 op=ADD shape=2048,1101,1,1 gpu_ms=0.187667 name=node_101
+FCPE_METAL_PROFILE index=103 op=CONT shape=1024,1101,1,1 gpu_ms=1.137625 name= (view) (cont)
+FCPE_METAL_PROFILE index=105 op=CONT shape=1024,1101,1,1 gpu_ms=0.857750 name= (view) (cont)
+FCPE_METAL_PROFILE index=106 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.053750 name=node_106
+FCPE_METAL_PROFILE index=107 op=MUL shape=1024,1101,1,1 gpu_ms=0.149125 name=node_107
+FCPE_METAL_PROFILE index=109 op=CONT shape=1101,1024,1,1 gpu_ms=0.905875 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=112 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=1.481833 name=node_111
+FCPE_METAL_PROFILE index=115 op=CONT shape=1024,1101,1,1 gpu_ms=0.730917 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=116 op=ADD shape=1024,1101,1,1 gpu_ms=0.053208 name=node_115
+FCPE_METAL_PROFILE index=117 op=SILU shape=1024,1101,1,1 gpu_ms=0.048083 name=node_116
+FCPE_METAL_PROFILE index=118 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.644333 name=node_117
+FCPE_METAL_PROFILE index=119 op=ADD shape=512,1101,1,1 gpu_ms=0.042875 name=node_118
+FCPE_METAL_PROFILE index=120 op=ADD shape=512,1101,1,1 gpu_ms=0.049792 name=node_119
+FCPE_METAL_PROFILE index=121 op=NORM shape=512,1101,1,1 gpu_ms=0.031708 name=node_121
+FCPE_METAL_PROFILE index=122 op=MUL shape=512,1101,1,1 gpu_ms=0.029208 name=node_122
+FCPE_METAL_PROFILE index=123 op=ADD shape=512,1101,1,1 gpu_ms=0.026750 name=node_123
+FCPE_METAL_PROFILE index=124 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=1.262833 name=node_124
+FCPE_METAL_PROFILE index=125 op=ADD shape=2048,1101,1,1 gpu_ms=0.728750 name=node_125
+FCPE_METAL_PROFILE index=127 op=CONT shape=1024,1101,1,1 gpu_ms=0.781875 name= (view) (cont)
+FCPE_METAL_PROFILE index=129 op=CONT shape=1024,1101,1,1 gpu_ms=0.733208 name= (view) (cont)
+FCPE_METAL_PROFILE index=130 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.056375 name=node_130
+FCPE_METAL_PROFILE index=131 op=MUL shape=1024,1101,1,1 gpu_ms=0.149625 name=node_131
+FCPE_METAL_PROFILE index=133 op=CONT shape=1101,1024,1,1 gpu_ms=0.779792 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=136 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=1.448125 name=node_135
+FCPE_METAL_PROFILE index=139 op=CONT shape=1024,1101,1,1 gpu_ms=0.731167 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=140 op=ADD shape=1024,1101,1,1 gpu_ms=0.057000 name=node_139
+FCPE_METAL_PROFILE index=141 op=SILU shape=1024,1101,1,1 gpu_ms=0.046750 name=node_140
+FCPE_METAL_PROFILE index=142 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.559958 name=node_141
+FCPE_METAL_PROFILE index=143 op=ADD shape=512,1101,1,1 gpu_ms=0.039625 name=node_142
+FCPE_METAL_PROFILE index=144 op=ADD shape=512,1101,1,1 gpu_ms=0.062125 name=node_143
+FCPE_METAL_PROFILE index=145 op=NORM shape=512,1101,1,1 gpu_ms=0.033875 name=node_145
+FCPE_METAL_PROFILE index=146 op=MUL shape=512,1101,1,1 gpu_ms=0.034125 name=node_146
+FCPE_METAL_PROFILE index=147 op=ADD shape=512,1101,1,1 gpu_ms=0.034333 name=node_147
+FCPE_METAL_PROFILE index=148 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=1.115625 name=node_148
+FCPE_METAL_PROFILE index=149 op=ADD shape=2048,1101,1,1 gpu_ms=0.188250 name=node_149
+FCPE_METAL_PROFILE index=151 op=CONT shape=1024,1101,1,1 gpu_ms=0.617750 name= (view) (cont)
+FCPE_METAL_PROFILE index=153 op=CONT shape=1024,1101,1,1 gpu_ms=0.587375 name= (view) (cont)
+FCPE_METAL_PROFILE index=154 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.069375 name=node_154
+FCPE_METAL_PROFILE index=155 op=MUL shape=1024,1101,1,1 gpu_ms=0.167000 name=node_155
+FCPE_METAL_PROFILE index=157 op=CONT shape=1101,1024,1,1 gpu_ms=0.688000 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=159 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=1.322375 name=node_159
+FCPE_METAL_PROFILE index=162 op=CONT shape=1024,1101,1,1 gpu_ms=0.649292 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=163 op=ADD shape=1024,1101,1,1 gpu_ms=0.068958 name=node_163
+FCPE_METAL_PROFILE index=164 op=SILU shape=1024,1101,1,1 gpu_ms=0.067875 name=node_164
+FCPE_METAL_PROFILE index=165 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.562208 name=node_165
+FCPE_METAL_PROFILE index=166 op=ADD shape=512,1101,1,1 gpu_ms=0.038042 name=node_166
+FCPE_METAL_PROFILE index=167 op=ADD shape=512,1101,1,1 gpu_ms=0.061458 name=node_167
+FCPE_METAL_PROFILE index=168 op=NORM shape=512,1101,1,1 gpu_ms=0.034125 name=node_168
+FCPE_METAL_PROFILE index=169 op=MUL shape=512,1101,1,1 gpu_ms=0.033375 name=node_169
+FCPE_METAL_PROFILE index=170 op=ADD shape=512,1101,1,1 gpu_ms=0.033000 name=node_170
+FCPE_METAL_PROFILE index=171 op=MUL_MAT shape=360,1101,1,1 gpu_ms=0.199292 name=node_171
+FCPE_METAL_PROFILE index=172 op=ADD shape=360,1101,1,1 gpu_ms=0.028000 name=node_172
+FCPE_METAL_PROFILE index=173 op=SIGMOID shape=360,1101,1,1 gpu_ms=0.027125 name=probabilities
+FCPE_METAL_PROFILE_END
+FCPE_METAL_PROFILE_BEGIN nodes=174
+FCPE_METAL_PROFILE index=3 op=CONT shape=1101,128,1,1 gpu_ms=0.069083 name=mel_input (transposed) (cont)
+FCPE_METAL_PROFILE index=4 op=IM2COL shape=384,1101,1,1 gpu_ms=0.429125 name=node_4
+FCPE_METAL_PROFILE index=6 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.181667 name=node_6
+FCPE_METAL_PROFILE index=7 op=ADD shape=512,1101,1,1 gpu_ms=0.029458 name=node_7
+FCPE_METAL_PROFILE index=9 op=CONT shape=1101,512,1,1 gpu_ms=0.278708 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=11 op=GROUP_NORM shape=1101,1,512,1 gpu_ms=2.680375 name=node_11
+FCPE_METAL_PROFILE index=14 op=CONT shape=512,1101,1,1 gpu_ms=0.248792 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=15 op=MUL shape=512,1101,1,1 gpu_ms=0.138250 name=node_15
+FCPE_METAL_PROFILE index=16 op=ADD shape=512,1101,1,1 gpu_ms=0.024250 name=node_16
+FCPE_METAL_PROFILE index=17 op=LEAKY_RELU shape=512,1101,1,1 gpu_ms=0.022917 name=node_17
+FCPE_METAL_PROFILE index=19 op=CONT shape=1101,512,1,1 gpu_ms=0.275083 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=21 op=IM2COL shape=1536,1101,1,1 gpu_ms=1.700917 name=node_20
+FCPE_METAL_PROFILE index=23 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.702875 name=node_22
+FCPE_METAL_PROFILE index=24 op=ADD shape=512,1101,1,1 gpu_ms=0.028958 name=node_23
+FCPE_METAL_PROFILE index=25 op=NORM shape=512,1101,1,1 gpu_ms=0.027167 name=node_25
+FCPE_METAL_PROFILE index=26 op=MUL shape=512,1101,1,1 gpu_ms=0.026417 name=node_26
+FCPE_METAL_PROFILE index=27 op=ADD shape=512,1101,1,1 gpu_ms=0.026500 name=node_27
+FCPE_METAL_PROFILE index=28 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.923000 name=node_28
+FCPE_METAL_PROFILE index=29 op=ADD shape=2048,1101,1,1 gpu_ms=0.140792 name=node_29
+FCPE_METAL_PROFILE index=31 op=CONT shape=1024,1101,1,1 gpu_ms=0.516375 name= (view) (cont)
+FCPE_METAL_PROFILE index=33 op=CONT shape=1024,1101,1,1 gpu_ms=0.485625 name= (view) (cont)
+FCPE_METAL_PROFILE index=34 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.049333 name=node_34
+FCPE_METAL_PROFILE index=35 op=MUL shape=1024,1101,1,1 gpu_ms=0.125625 name=node_35
+FCPE_METAL_PROFILE index=37 op=CONT shape=1101,1024,1,1 gpu_ms=0.494125 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=40 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.832875 name=node_39
+FCPE_METAL_PROFILE index=43 op=CONT shape=1024,1101,1,1 gpu_ms=0.464417 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=44 op=ADD shape=1024,1101,1,1 gpu_ms=0.053250 name=node_43
+FCPE_METAL_PROFILE index=45 op=SILU shape=1024,1101,1,1 gpu_ms=0.045625 name=node_44
+FCPE_METAL_PROFILE index=46 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.405625 name=node_45
+FCPE_METAL_PROFILE index=47 op=ADD shape=512,1101,1,1 gpu_ms=0.027000 name=node_46
+FCPE_METAL_PROFILE index=48 op=ADD shape=512,1101,1,1 gpu_ms=0.047833 name=node_47
+FCPE_METAL_PROFILE index=49 op=NORM shape=512,1101,1,1 gpu_ms=0.027083 name=node_49
+FCPE_METAL_PROFILE index=50 op=MUL shape=512,1101,1,1 gpu_ms=0.027250 name=node_50
+FCPE_METAL_PROFILE index=51 op=ADD shape=512,1101,1,1 gpu_ms=0.023000 name=node_51
+FCPE_METAL_PROFILE index=52 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.803042 name=node_52
+FCPE_METAL_PROFILE index=53 op=ADD shape=2048,1101,1,1 gpu_ms=0.143125 name=node_53
+FCPE_METAL_PROFILE index=55 op=CONT shape=1024,1101,1,1 gpu_ms=0.449958 name= (view) (cont)
+FCPE_METAL_PROFILE index=57 op=CONT shape=1024,1101,1,1 gpu_ms=0.464083 name= (view) (cont)
+FCPE_METAL_PROFILE index=58 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.048833 name=node_58
+FCPE_METAL_PROFILE index=59 op=MUL shape=1024,1101,1,1 gpu_ms=0.120250 name=node_59
+FCPE_METAL_PROFILE index=61 op=CONT shape=1101,1024,1,1 gpu_ms=0.496750 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=64 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.834167 name=node_63
+FCPE_METAL_PROFILE index=67 op=CONT shape=1024,1101,1,1 gpu_ms=0.464417 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=68 op=ADD shape=1024,1101,1,1 gpu_ms=0.050042 name=node_67
+FCPE_METAL_PROFILE index=69 op=SILU shape=1024,1101,1,1 gpu_ms=0.045250 name=node_68
+FCPE_METAL_PROFILE index=70 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.402917 name=node_69
+FCPE_METAL_PROFILE index=71 op=ADD shape=512,1101,1,1 gpu_ms=0.030375 name=node_70
+FCPE_METAL_PROFILE index=72 op=ADD shape=512,1101,1,1 gpu_ms=0.044917 name=node_71
+FCPE_METAL_PROFILE index=73 op=NORM shape=512,1101,1,1 gpu_ms=0.026583 name=node_73
+FCPE_METAL_PROFILE index=74 op=MUL shape=512,1101,1,1 gpu_ms=0.026125 name=node_74
+FCPE_METAL_PROFILE index=75 op=ADD shape=512,1101,1,1 gpu_ms=0.026375 name=node_75
+FCPE_METAL_PROFILE index=76 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.775292 name=node_76
+FCPE_METAL_PROFILE index=77 op=ADD shape=2048,1101,1,1 gpu_ms=0.145000 name=node_77
+FCPE_METAL_PROFILE index=79 op=CONT shape=1024,1101,1,1 gpu_ms=0.546750 name= (view) (cont)
+FCPE_METAL_PROFILE index=81 op=CONT shape=1024,1101,1,1 gpu_ms=0.433250 name= (view) (cont)
+FCPE_METAL_PROFILE index=82 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.050875 name=node_82
+FCPE_METAL_PROFILE index=83 op=MUL shape=1024,1101,1,1 gpu_ms=0.113000 name=node_83
+FCPE_METAL_PROFILE index=85 op=CONT shape=1101,1024,1,1 gpu_ms=0.462375 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=88 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.776917 name=node_87
+FCPE_METAL_PROFILE index=91 op=CONT shape=1024,1101,1,1 gpu_ms=0.431625 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=92 op=ADD shape=1024,1101,1,1 gpu_ms=0.050625 name=node_91
+FCPE_METAL_PROFILE index=93 op=SILU shape=1024,1101,1,1 gpu_ms=0.044750 name=node_92
+FCPE_METAL_PROFILE index=94 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.382125 name=node_93
+FCPE_METAL_PROFILE index=95 op=ADD shape=512,1101,1,1 gpu_ms=0.027250 name=node_94
+FCPE_METAL_PROFILE index=96 op=ADD shape=512,1101,1,1 gpu_ms=0.042292 name=node_95
+FCPE_METAL_PROFILE index=97 op=NORM shape=512,1101,1,1 gpu_ms=0.026500 name=node_97
+FCPE_METAL_PROFILE index=98 op=MUL shape=512,1101,1,1 gpu_ms=0.021458 name=node_98
+FCPE_METAL_PROFILE index=99 op=ADD shape=512,1101,1,1 gpu_ms=0.023917 name=node_99
+FCPE_METAL_PROFILE index=100 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.748500 name=node_100
+FCPE_METAL_PROFILE index=101 op=ADD shape=2048,1101,1,1 gpu_ms=0.139375 name=node_101
+FCPE_METAL_PROFILE index=103 op=CONT shape=1024,1101,1,1 gpu_ms=0.432208 name= (view) (cont)
+FCPE_METAL_PROFILE index=105 op=CONT shape=1024,1101,1,1 gpu_ms=0.434792 name= (view) (cont)
+FCPE_METAL_PROFILE index=106 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.047750 name=node_106
+FCPE_METAL_PROFILE index=107 op=MUL shape=1024,1101,1,1 gpu_ms=0.111250 name=node_107
+FCPE_METAL_PROFILE index=109 op=CONT shape=1101,1024,1,1 gpu_ms=0.460750 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=112 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.780000 name=node_111
+FCPE_METAL_PROFILE index=115 op=CONT shape=1024,1101,1,1 gpu_ms=0.436208 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=116 op=ADD shape=1024,1101,1,1 gpu_ms=0.049000 name=node_115
+FCPE_METAL_PROFILE index=117 op=SILU shape=1024,1101,1,1 gpu_ms=0.045042 name=node_116
+FCPE_METAL_PROFILE index=118 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.378583 name=node_117
+FCPE_METAL_PROFILE index=119 op=ADD shape=512,1101,1,1 gpu_ms=0.366375 name=node_118
+FCPE_METAL_PROFILE index=120 op=ADD shape=512,1101,1,1 gpu_ms=0.045875 name=node_119
+FCPE_METAL_PROFILE index=121 op=NORM shape=512,1101,1,1 gpu_ms=0.022875 name=node_121
+FCPE_METAL_PROFILE index=122 op=MUL shape=512,1101,1,1 gpu_ms=0.024417 name=node_122
+FCPE_METAL_PROFILE index=123 op=ADD shape=512,1101,1,1 gpu_ms=0.021500 name=node_123
+FCPE_METAL_PROFILE index=124 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.745375 name=node_124
+FCPE_METAL_PROFILE index=125 op=ADD shape=2048,1101,1,1 gpu_ms=0.138458 name=node_125
+FCPE_METAL_PROFILE index=127 op=CONT shape=1024,1101,1,1 gpu_ms=0.432500 name= (view) (cont)
+FCPE_METAL_PROFILE index=129 op=CONT shape=1024,1101,1,1 gpu_ms=0.432125 name= (view) (cont)
+FCPE_METAL_PROFILE index=130 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.048708 name=node_130
+FCPE_METAL_PROFILE index=131 op=MUL shape=1024,1101,1,1 gpu_ms=0.115125 name=node_131
+FCPE_METAL_PROFILE index=133 op=CONT shape=1101,1024,1,1 gpu_ms=0.460375 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=136 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.776875 name=node_135
+FCPE_METAL_PROFILE index=139 op=CONT shape=1024,1101,1,1 gpu_ms=0.436792 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=140 op=ADD shape=1024,1101,1,1 gpu_ms=0.049625 name=node_139
+FCPE_METAL_PROFILE index=141 op=SILU shape=1024,1101,1,1 gpu_ms=0.047875 name=node_140
+FCPE_METAL_PROFILE index=142 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.377125 name=node_141
+FCPE_METAL_PROFILE index=143 op=ADD shape=512,1101,1,1 gpu_ms=0.029583 name=node_142
+FCPE_METAL_PROFILE index=144 op=ADD shape=512,1101,1,1 gpu_ms=0.046042 name=node_143
+FCPE_METAL_PROFILE index=145 op=NORM shape=512,1101,1,1 gpu_ms=0.025542 name=node_145
+FCPE_METAL_PROFILE index=146 op=MUL shape=512,1101,1,1 gpu_ms=0.023000 name=node_146
+FCPE_METAL_PROFILE index=147 op=ADD shape=512,1101,1,1 gpu_ms=0.025375 name=node_147
+FCPE_METAL_PROFILE index=148 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.752583 name=node_148
+FCPE_METAL_PROFILE index=149 op=ADD shape=2048,1101,1,1 gpu_ms=0.137875 name=node_149
+FCPE_METAL_PROFILE index=151 op=CONT shape=1024,1101,1,1 gpu_ms=0.432083 name= (view) (cont)
+FCPE_METAL_PROFILE index=153 op=CONT shape=1024,1101,1,1 gpu_ms=0.438500 name= (view) (cont)
+FCPE_METAL_PROFILE index=154 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.052000 name=node_154
+FCPE_METAL_PROFILE index=155 op=MUL shape=1024,1101,1,1 gpu_ms=0.110750 name=node_155
+FCPE_METAL_PROFILE index=157 op=CONT shape=1101,1024,1,1 gpu_ms=0.466833 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=159 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.777500 name=node_159
+FCPE_METAL_PROFILE index=162 op=CONT shape=1024,1101,1,1 gpu_ms=0.436917 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=163 op=ADD shape=1024,1101,1,1 gpu_ms=0.046250 name=node_163
+FCPE_METAL_PROFILE index=164 op=SILU shape=1024,1101,1,1 gpu_ms=0.044958 name=node_164
+FCPE_METAL_PROFILE index=165 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.376000 name=node_165
+FCPE_METAL_PROFILE index=166 op=ADD shape=512,1101,1,1 gpu_ms=0.026625 name=node_166
+FCPE_METAL_PROFILE index=167 op=ADD shape=512,1101,1,1 gpu_ms=0.043417 name=node_167
+FCPE_METAL_PROFILE index=168 op=NORM shape=512,1101,1,1 gpu_ms=0.025458 name=node_168
+FCPE_METAL_PROFILE index=169 op=MUL shape=512,1101,1,1 gpu_ms=0.021500 name=node_169
+FCPE_METAL_PROFILE index=170 op=ADD shape=512,1101,1,1 gpu_ms=0.021208 name=node_170
+FCPE_METAL_PROFILE index=171 op=MUL_MAT shape=360,1101,1,1 gpu_ms=0.145625 name=node_171
+FCPE_METAL_PROFILE index=172 op=ADD shape=360,1101,1,1 gpu_ms=0.017458 name=node_172
+FCPE_METAL_PROFILE index=173 op=SIGMOID shape=360,1101,1,1 gpu_ms=0.016625 name=probabilities
+FCPE_METAL_PROFILE_END
+FCPE_METAL_PROFILE_BEGIN nodes=174
+FCPE_METAL_PROFILE index=3 op=CONT shape=1101,128,1,1 gpu_ms=0.054500 name=mel_input (transposed) (cont)
+FCPE_METAL_PROFILE index=4 op=IM2COL shape=384,1101,1,1 gpu_ms=0.347125 name=node_4
+FCPE_METAL_PROFILE index=6 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.149958 name=node_6
+FCPE_METAL_PROFILE index=7 op=ADD shape=512,1101,1,1 gpu_ms=0.029042 name=node_7
+FCPE_METAL_PROFILE index=9 op=CONT shape=1101,512,1,1 gpu_ms=0.226042 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=11 op=GROUP_NORM shape=1101,1,512,1 gpu_ms=2.204875 name=node_11
+FCPE_METAL_PROFILE index=14 op=CONT shape=512,1101,1,1 gpu_ms=0.200958 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=15 op=MUL shape=512,1101,1,1 gpu_ms=0.024000 name=node_15
+FCPE_METAL_PROFILE index=16 op=ADD shape=512,1101,1,1 gpu_ms=0.022750 name=node_16
+FCPE_METAL_PROFILE index=17 op=LEAKY_RELU shape=512,1101,1,1 gpu_ms=0.022125 name=node_17
+FCPE_METAL_PROFILE index=19 op=CONT shape=1101,512,1,1 gpu_ms=0.226000 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=21 op=IM2COL shape=1536,1101,1,1 gpu_ms=1.373625 name=node_20
+FCPE_METAL_PROFILE index=23 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.569750 name=node_22
+FCPE_METAL_PROFILE index=24 op=ADD shape=512,1101,1,1 gpu_ms=0.027958 name=node_23
+FCPE_METAL_PROFILE index=25 op=NORM shape=512,1101,1,1 gpu_ms=0.025167 name=node_25
+FCPE_METAL_PROFILE index=26 op=MUL shape=512,1101,1,1 gpu_ms=0.021875 name=node_26
+FCPE_METAL_PROFILE index=27 op=ADD shape=512,1101,1,1 gpu_ms=0.024000 name=node_27
+FCPE_METAL_PROFILE index=28 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.749625 name=node_28
+FCPE_METAL_PROFILE index=29 op=ADD shape=2048,1101,1,1 gpu_ms=0.144417 name=node_29
+FCPE_METAL_PROFILE index=31 op=CONT shape=1024,1101,1,1 gpu_ms=0.432208 name= (view) (cont)
+FCPE_METAL_PROFILE index=33 op=CONT shape=1024,1101,1,1 gpu_ms=1.110625 name= (view) (cont)
+FCPE_METAL_PROFILE index=34 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.063625 name=node_34
+FCPE_METAL_PROFILE index=35 op=MUL shape=1024,1101,1,1 gpu_ms=0.125625 name=node_35
+FCPE_METAL_PROFILE index=37 op=CONT shape=1101,1024,1,1 gpu_ms=0.463208 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=40 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.777417 name=node_39
+FCPE_METAL_PROFILE index=43 op=CONT shape=1024,1101,1,1 gpu_ms=0.433250 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=44 op=ADD shape=1024,1101,1,1 gpu_ms=0.049792 name=node_43
+FCPE_METAL_PROFILE index=45 op=SILU shape=1024,1101,1,1 gpu_ms=0.048417 name=node_44
+FCPE_METAL_PROFILE index=46 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.378292 name=node_45
+FCPE_METAL_PROFILE index=47 op=ADD shape=512,1101,1,1 gpu_ms=0.027500 name=node_46
+FCPE_METAL_PROFILE index=48 op=ADD shape=512,1101,1,1 gpu_ms=0.044625 name=node_47
+FCPE_METAL_PROFILE index=49 op=NORM shape=512,1101,1,1 gpu_ms=0.022708 name=node_49
+FCPE_METAL_PROFILE index=50 op=MUL shape=512,1101,1,1 gpu_ms=0.026167 name=node_50
+FCPE_METAL_PROFILE index=51 op=ADD shape=512,1101,1,1 gpu_ms=0.025750 name=node_51
+FCPE_METAL_PROFILE index=52 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.747125 name=node_52
+FCPE_METAL_PROFILE index=53 op=ADD shape=2048,1101,1,1 gpu_ms=0.145000 name=node_53
+FCPE_METAL_PROFILE index=55 op=CONT shape=1024,1101,1,1 gpu_ms=0.432625 name= (view) (cont)
+FCPE_METAL_PROFILE index=57 op=CONT shape=1024,1101,1,1 gpu_ms=0.432000 name= (view) (cont)
+FCPE_METAL_PROFILE index=58 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.048167 name=node_58
+FCPE_METAL_PROFILE index=59 op=MUL shape=1024,1101,1,1 gpu_ms=0.116958 name=node_59
+FCPE_METAL_PROFILE index=61 op=CONT shape=1101,1024,1,1 gpu_ms=0.466375 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=64 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.777417 name=node_63
+FCPE_METAL_PROFILE index=67 op=CONT shape=1024,1101,1,1 gpu_ms=0.430125 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=68 op=ADD shape=1024,1101,1,1 gpu_ms=0.049500 name=node_67
+FCPE_METAL_PROFILE index=69 op=SILU shape=1024,1101,1,1 gpu_ms=0.044500 name=node_68
+FCPE_METAL_PROFILE index=70 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.378917 name=node_69
+FCPE_METAL_PROFILE index=71 op=ADD shape=512,1101,1,1 gpu_ms=0.030667 name=node_70
+FCPE_METAL_PROFILE index=72 op=ADD shape=512,1101,1,1 gpu_ms=0.044292 name=node_71
+FCPE_METAL_PROFILE index=73 op=NORM shape=512,1101,1,1 gpu_ms=0.026500 name=node_73
+FCPE_METAL_PROFILE index=74 op=MUL shape=512,1101,1,1 gpu_ms=0.025875 name=node_74
+FCPE_METAL_PROFILE index=75 op=ADD shape=512,1101,1,1 gpu_ms=0.022750 name=node_75
+FCPE_METAL_PROFILE index=76 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.753375 name=node_76
+FCPE_METAL_PROFILE index=77 op=ADD shape=2048,1101,1,1 gpu_ms=0.147500 name=node_77
+FCPE_METAL_PROFILE index=79 op=CONT shape=1024,1101,1,1 gpu_ms=0.434250 name= (view) (cont)
+FCPE_METAL_PROFILE index=81 op=CONT shape=1024,1101,1,1 gpu_ms=0.438500 name= (view) (cont)
+FCPE_METAL_PROFILE index=82 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.050000 name=node_82
+FCPE_METAL_PROFILE index=83 op=MUL shape=1024,1101,1,1 gpu_ms=0.114250 name=node_83
+FCPE_METAL_PROFILE index=85 op=CONT shape=1101,1024,1,1 gpu_ms=0.459625 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=88 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.777375 name=node_87
+FCPE_METAL_PROFILE index=91 op=CONT shape=1024,1101,1,1 gpu_ms=0.431500 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=92 op=ADD shape=1024,1101,1,1 gpu_ms=0.047875 name=node_91
+FCPE_METAL_PROFILE index=93 op=SILU shape=1024,1101,1,1 gpu_ms=0.047750 name=node_92
+FCPE_METAL_PROFILE index=94 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.377250 name=node_93
+FCPE_METAL_PROFILE index=95 op=ADD shape=512,1101,1,1 gpu_ms=0.029458 name=node_94
+FCPE_METAL_PROFILE index=96 op=ADD shape=512,1101,1,1 gpu_ms=0.046083 name=node_95
+FCPE_METAL_PROFILE index=97 op=NORM shape=512,1101,1,1 gpu_ms=0.025250 name=node_97
+FCPE_METAL_PROFILE index=98 op=MUL shape=512,1101,1,1 gpu_ms=0.024542 name=node_98
+FCPE_METAL_PROFILE index=99 op=ADD shape=512,1101,1,1 gpu_ms=0.024500 name=node_99
+FCPE_METAL_PROFILE index=100 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.749167 name=node_100
+FCPE_METAL_PROFILE index=101 op=ADD shape=2048,1101,1,1 gpu_ms=0.141750 name=node_101
+FCPE_METAL_PROFILE index=103 op=CONT shape=1024,1101,1,1 gpu_ms=0.433125 name= (view) (cont)
+FCPE_METAL_PROFILE index=105 op=CONT shape=1024,1101,1,1 gpu_ms=0.435125 name= (view) (cont)
+FCPE_METAL_PROFILE index=106 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.050500 name=node_106
+FCPE_METAL_PROFILE index=107 op=MUL shape=1024,1101,1,1 gpu_ms=0.115708 name=node_107
+FCPE_METAL_PROFILE index=109 op=CONT shape=1101,1024,1,1 gpu_ms=0.460875 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=112 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.777333 name=node_111
+FCPE_METAL_PROFILE index=115 op=CONT shape=1024,1101,1,1 gpu_ms=0.431042 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=116 op=ADD shape=1024,1101,1,1 gpu_ms=0.049750 name=node_115
+FCPE_METAL_PROFILE index=117 op=SILU shape=1024,1101,1,1 gpu_ms=0.047625 name=node_116
+FCPE_METAL_PROFILE index=118 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.378500 name=node_117
+FCPE_METAL_PROFILE index=119 op=ADD shape=512,1101,1,1 gpu_ms=0.027250 name=node_118
+FCPE_METAL_PROFILE index=120 op=ADD shape=512,1101,1,1 gpu_ms=0.044000 name=node_119
+FCPE_METAL_PROFILE index=121 op=NORM shape=512,1101,1,1 gpu_ms=0.022000 name=node_121
+FCPE_METAL_PROFILE index=122 op=MUL shape=512,1101,1,1 gpu_ms=0.296750 name=node_122
+FCPE_METAL_PROFILE index=123 op=ADD shape=512,1101,1,1 gpu_ms=0.022958 name=node_123
+FCPE_METAL_PROFILE index=124 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.747208 name=node_124
+FCPE_METAL_PROFILE index=125 op=ADD shape=2048,1101,1,1 gpu_ms=0.139125 name=node_125
+FCPE_METAL_PROFILE index=127 op=CONT shape=1024,1101,1,1 gpu_ms=0.439375 name= (view) (cont)
+FCPE_METAL_PROFILE index=129 op=CONT shape=1024,1101,1,1 gpu_ms=0.432792 name= (view) (cont)
+FCPE_METAL_PROFILE index=130 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.050542 name=node_130
+FCPE_METAL_PROFILE index=131 op=MUL shape=1024,1101,1,1 gpu_ms=0.114000 name=node_131
+FCPE_METAL_PROFILE index=133 op=CONT shape=1101,1024,1,1 gpu_ms=0.466000 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=136 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.778125 name=node_135
+FCPE_METAL_PROFILE index=139 op=CONT shape=1024,1101,1,1 gpu_ms=0.434667 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=140 op=ADD shape=1024,1101,1,1 gpu_ms=0.051792 name=node_139
+FCPE_METAL_PROFILE index=141 op=SILU shape=1024,1101,1,1 gpu_ms=0.045375 name=node_140
+FCPE_METAL_PROFILE index=142 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.380125 name=node_141
+FCPE_METAL_PROFILE index=143 op=ADD shape=512,1101,1,1 gpu_ms=0.026958 name=node_142
+FCPE_METAL_PROFILE index=144 op=ADD shape=512,1101,1,1 gpu_ms=0.042917 name=node_143
+FCPE_METAL_PROFILE index=145 op=NORM shape=512,1101,1,1 gpu_ms=0.022042 name=node_145
+FCPE_METAL_PROFILE index=146 op=MUL shape=512,1101,1,1 gpu_ms=0.021250 name=node_146
+FCPE_METAL_PROFILE index=147 op=ADD shape=512,1101,1,1 gpu_ms=0.024375 name=node_147
+FCPE_METAL_PROFILE index=148 op=MUL_MAT shape=2048,1101,1,1 gpu_ms=0.749958 name=node_148
+FCPE_METAL_PROFILE index=149 op=ADD shape=2048,1101,1,1 gpu_ms=0.138500 name=node_149
+FCPE_METAL_PROFILE index=151 op=CONT shape=1024,1101,1,1 gpu_ms=0.432875 name= (view) (cont)
+FCPE_METAL_PROFILE index=153 op=CONT shape=1024,1101,1,1 gpu_ms=0.432292 name= (view) (cont)
+FCPE_METAL_PROFILE index=154 op=SIGMOID shape=1024,1101,1,1 gpu_ms=0.048958 name=node_154
+FCPE_METAL_PROFILE index=155 op=MUL shape=1024,1101,1,1 gpu_ms=0.114875 name=node_155
+FCPE_METAL_PROFILE index=157 op=CONT shape=1101,1024,1,1 gpu_ms=0.463208 name= (transposed) (cont)
+FCPE_METAL_PROFILE index=159 op=CONV_2D_DW shape=1101,1,1024,1 gpu_ms=0.776792 name=node_159
+FCPE_METAL_PROFILE index=162 op=CONT shape=1024,1101,1,1 gpu_ms=0.433208 name= (reshaped) (transposed) (cont)
+FCPE_METAL_PROFILE index=163 op=ADD shape=1024,1101,1,1 gpu_ms=0.048208 name=node_163
+FCPE_METAL_PROFILE index=164 op=SILU shape=1024,1101,1,1 gpu_ms=0.047875 name=node_164
+FCPE_METAL_PROFILE index=165 op=MUL_MAT shape=512,1101,1,1 gpu_ms=0.379250 name=node_165
+FCPE_METAL_PROFILE index=166 op=ADD shape=512,1101,1,1 gpu_ms=0.026333 name=node_166
+FCPE_METAL_PROFILE index=167 op=ADD shape=512,1101,1,1 gpu_ms=0.043292 name=node_167
+FCPE_METAL_PROFILE index=168 op=NORM shape=512,1101,1,1 gpu_ms=0.029375 name=node_168
+FCPE_METAL_PROFILE index=169 op=MUL shape=512,1101,1,1 gpu_ms=0.021875 name=node_169
+FCPE_METAL_PROFILE index=170 op=ADD shape=512,1101,1,1 gpu_ms=0.025500 name=node_170
+FCPE_METAL_PROFILE index=171 op=MUL_MAT shape=360,1101,1,1 gpu_ms=0.146000 name=node_171
+FCPE_METAL_PROFILE index=172 op=ADD shape=360,1101,1,1 gpu_ms=0.018042 name=node_172
+FCPE_METAL_PROFILE index=173 op=SIGMOID shape=360,1101,1,1 gpu_ms=0.019500 name=probabilities
+FCPE_METAL_PROFILE_END
+ggml_metal_free: deallocating
+MTL0 mean=65.7499 ms first=307.559 ms nodes=174 splits=1 CPU=0 GPU=122 compute_MiB=22.0415

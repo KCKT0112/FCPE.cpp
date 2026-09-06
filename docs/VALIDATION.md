@@ -4,6 +4,16 @@ Date: 2026-09-06, second optimization round. Native Windows x64, MSVC 19.51, ggm
 
 ## Reference and coverage
 
+### macOS follow-up, 2026-09-06
+
+Apple M4 / macOS 27 / Apple Clang 21 now has CPU and optimized Metal F32 validation. Both pass the standard 14 recordings; final Metal also passes a 60-second full-WAV recording. Maximum full-suite F0 error is 0.00138855 Hz, with zero UV differences. Strict float operands are retained. The optimized graph uses tiled copies/im2col, channel-contiguous depthwise convolution, whole-recording parallel GroupNorm and projection/GLU/activation fusion.
+
+Final Metal CTest passes 7 tests, also with Metal Shader Validation enabled. Independent oracles cover 19 matrices, 60 bitwise copies, 144 depthwise cases, 108 GroupNorm cases, 32 projection/GLU cases, 35 bitwise im2col cases and 180 elementwise fusion/fallback cases. CPU-only CTest passes 3 tests; file-format regressions and the external CMake consumer pass.
+
+F16 retains the known JFK frame-885 threshold difference in both direct-Mel and WAV modes; no failed frame is removed. The 132 controlled native ablation runs all pass. The wider framework comparison passes 68/70 combinations: **all FCPE native CPU/Metal and PyTorch CPU/MPS cases pass**, while ORT CPU at 30 and 60 seconds exceeds the existing 1e-5 probability limit (2.72095e-5 and 0.000110090). The command correctly returns failure; ORT's F0/UV checks still pass. These reference-engine failures are retained separately from FCPE results.
+
+Final metrics, hashes, all timing samples and logs: [Metal optimization archive](benchmarks/2026-09-06-macos-extreme/README.md). The [first macOS archive](benchmarks/2026-09-06-macos/README.md) retains its original 28/28 results and five-test suite. Implementation and commands are in [METAL.md](METAL.md). The Windows record below remains a separate experiment using its original PyTorch and hardware.
+
 The reference executes the **unmodified Python files extracted from the user's exact torchfcpe 0.0.4 wheel**. The validation harness loads the trusted checkpoint with `weights_only=True`, sets inference dropout to zero like the bundled loader, and puts the model in evaluation mode.
 
 The 13 built-in recordings cover silence, 1-sample input, short input, hop/padding boundaries, voiced/unvoiced regions, stereo mixing, noise, harmonic chirps and 8/16/22.05/44.1/48 kHz resampling. A fourteenth recording is the 11-second [JFK speech sample](https://raw.githubusercontent.com/ggml-org/whisper.cpp/master/samples/jfk.wav) from whisper.cpp (1101 model frames).
@@ -58,8 +68,8 @@ Raw reports:
 - `fcpe-fusion-tests Vulkan0` passes 180 fused/fallback cases against a separate double scalar oracle: six operations, five channel counts (7/32/360/512/1024), three row counts (1/3/65), and intermediates retained as outputs or not. This covers strided and misaligned GLU views, partial workgroups, LayerNorm with more channels than threads, and output-consumer checks that prevent fusion. Maximum absolute error: 0.000003013. Both project SPIR-V shaders pass `spirv-val --target-env vulkan1.2`.
 - Python file-format regressions passed: PCM 8/16/24/32, float 32/64, each in ordinary and extensible WAV; odd unknown RIFF chunks; invalid CLI arguments; NaN audio; malformed GGUF metadata; truncated models; protection against overwriting the input/model.
 - The external CMake consumer in `examples/` builds as a separate project and processes the 0.1-second WAV successfully, including the explicit `Threads::Threads` link used by the parallel frontend.
-- Native ggml CUDA and Metal build options are connected to upstream ggml, but **not validated here**. The available CUDA 12.8 toolkit rejects the installed MSVC 19.51 compiler; no unsupported-compiler override was used. No macOS host was available. PyTorch CUDA and ORT CUDA were separately benchmarked and checked for numerical agreement; those successful runs do not validate ggml CUDA. See [METAL.md](METAL.md) for the Metal source review and future validation commands.
-- A Windows/Linux CPU CI workflow is provided in `.github/workflows/ci.yml`. It has not been run on GitHub from this workspace.
+- Native ggml CUDA and Metal build options are connected to upstream ggml, but **not validated here**. The available CUDA 12.8 toolkit rejects the installed MSVC 19.51 compiler; no unsupported-compiler override was used. No macOS host was available. PyTorch CUDA and ORT CUDA were separately benchmarked and checked for numerical agreement; those successful runs do not validate ggml CUDA. See [METAL.md](METAL.md) for the subsequent macOS implementation and actual validation.
+- The CPU CI workflow in `.github/workflows/ci.yml` now also includes macOS, compiling Metal and running CPU parity there. Hosted-runner Metal execution is not assumed. The updated workflow has not been run on GitHub from this workspace.
 
 ## Timing limits
 

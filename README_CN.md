@@ -86,8 +86,9 @@ Remove-Item Env:FCPE_BUILD_DIR
 cmake -S . -B build-cuda -DFCPE_CUDA=ON
 cmake --build build-cuda -j
 # macOS:
-cmake -S . -B build-metal -DFCPE_METAL=ON
+cmake -S . -B build-metal -DCMAKE_BUILD_TYPE=Release -DFCPE_METAL=ON
 cmake --build build-metal -j
+./build-metal/bin/fcpe-cli --list-backends
 ```
 
 ## 使用 CLI
@@ -174,6 +175,8 @@ python scripts/validate.py --cli build-vulkan/bin/fcpe-cli.exe --model models/fc
 - wheel 的 Wav2Mel 用**重采样前**的样本数修正帧数，导致低于 16 kHz 的输入被截断。此实现根据**重采样后的**长度输出 `floor(samples / hop) + 1` 帧；验证时先由原版 torchaudio 重采样，再调用 wheel 的 16 kHz 路径。
 - 全清音的 UV 插值返回全零，避免原版在没有任何有声点时索引空张量。
 
+Apple M4 / macOS 27 实测：CPU 与修复后的 Metal F32 通过全部 14 组对照，完整链路 F0 最大误差 **0.001389 Hz**，清浊差异为零。Metal 实际设备名为 `MTL0`；`FCPE_METAL_STRICT_F32=ON` 默认使用 float 操作数，修复上游 F32 存储路径内部的 half 舍入。F16 保留相同的 JFK 第 885 帧阈值差异。构建、CTest 和指标见 [docs/METAL.md](docs/METAL.md)。 专项优化补充转置、im2col、深度卷积、分级 GroupNorm 和投影 GLU 融合；三轮交替测试将 11 秒网络中位从 **32.344 ms 降至 12.442 ms（2.60 倍）**，无 CPU 回退。最终 Metal 通过含 60 秒长音频的 15 组完整对照及 Shader Validation 下的 7 项 CTest；宽长度对比中 ORT CPU 的两项概率门槛失败单独保留，FCPE 原生结果全部通过。
+
 ## 加速与性能对比
 
 Vulkan 默认启用严格 F32、device-local 显存优先、上游 F32 矩阵内核参数调优，以及 LayerNorm／仿射／sigmoid-GLU／bias 激活融合。GLU 直接读取带 stride 的切片，去掉中间拷贝。所有后端补丁只生成在构建目录中，不改 ggml checkout，也不需要运行时编译 shader。CPU Mel 前端加入稀疏投影、FFT 缓存和批量并行。
@@ -198,7 +201,7 @@ Vulkan 默认启用严格 F32、device-local 显存优先、上游 F32 矩阵内
 
 此实现对应发布包中的纯卷积推理模型。转换器会拒绝 attention、harmonic embedding 或 STFT-only 等其他训练配置。F32 与混合 F16 模型受支持，尚未实现整数权重量化。
 
-输入堆栈的 GroupNorm 同时跨时间和组内通道归一化，因此分段音频的结果不等价于整段推理。当前保留整段语义，计算图内存随音频长度增长，没有隐式切片或流式近似。原生 ggml CUDA、Metal 开关接入上游 ggml，但未在本机验证；PyTorch／ORT CUDA 的测试结果不代表 ggml CUDA。Metal 的源码检查、精度注意点和 Mac 验证步骤单独记录在 [docs/METAL.md](docs/METAL.md)。
+输入堆栈的 GroupNorm 同时跨时间和组内通道归一化，因此分段音频的结果不等价于整段推理。当前保留整段语义，计算图内存随音频长度增长，没有隐式切片或流式近似。原生 ggml CUDA 尚未验证；PyTorch／ORT CUDA 的测试结果不代表 ggml CUDA。Metal 已在 Apple M4 实测，其他 Apple GPU、Intel Mac 和旧版 macOS 尚未验证，详见 [docs/METAL.md](docs/METAL.md)。
 
 ## 许可与声明
 

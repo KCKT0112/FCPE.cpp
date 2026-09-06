@@ -1,0 +1,15 @@
+Test project /Users/kuro/code/FCPE.cpp/build-macos-metal
+    Start 1: fcpe-unit
+1/5 Test #1: fcpe-unit ........................   Passed    0.01 sec
+    Start 2: fcpe-backend-cpu
+2/5 Test #2: fcpe-backend-cpu .................   Passed    0.22 sec
+    Start 3: fcpe-backend-accelerator
+3/5 Test #3: fcpe-backend-accelerator .........   Passed    0.19 sec
+    Start 4: fcpe-model
+4/5 Test #4: fcpe-model .......................   Passed    0.10 sec
+    Start 5: fcpe-model-accelerator
+5/5 Test #5: fcpe-model-accelerator ...........   Passed    0.10 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   0.63 sec

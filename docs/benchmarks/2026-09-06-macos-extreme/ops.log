@@ -1,0 +1,54 @@
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.008 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0 (Apple M4)
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 19069.67 MB
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'fcpe_copy_rows_f32', name = 'fcpe_copy_rows_f32'
+ggml_metal_library_compile_pipeline: loaded fcpe_copy_rows_f32                            0x1033d79b0 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'fcpe_transpose_f32', name = 'fcpe_transpose_f32'
+ggml_metal_library_compile_pipeline: loaded fcpe_transpose_f32                            0x1033d5530 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'fcpe_depthwise_channels', name = 'fcpe_depthwise_channels'
+ggml_metal_library_compile_pipeline: loaded fcpe_depthwise_channels                      0x7c64e4c380 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'fcpe_depthwise31', name = 'fcpe_depthwise31'
+ggml_metal_library_compile_pipeline: loaded fcpe_depthwise31                             0x7c64e4c700 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_conv_2d_dw_tiled_f32_f32', name = 'kernel_conv_2d_dw_tiled_f32_f32'
+ggml_metal_library_compile_pipeline: loaded kernel_conv_2d_dw_tiled_f32_f32              0x7c64e4c000 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'fcpe_group_small', name = 'fcpe_group_small'
+ggml_metal_library_compile_pipeline: loaded fcpe_group_small                             0x7c64e4ca80 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'fcpe_group_stats', name = 'fcpe_group_stats'
+ggml_metal_library_compile_pipeline: loaded fcpe_group_stats                             0x7c64e4d500 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'fcpe_group_apply', name = 'fcpe_group_apply'
+ggml_metal_library_compile_pipeline: loaded fcpe_group_apply                             0x7c64e4d880 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'fcpe_im2col3', name = 'fcpe_im2col3'
+ggml_metal_library_compile_pipeline: loaded fcpe_im2col3                                 0x7c64e4dc00 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_mul_mv_f32_f32_4', name = 'kernel_mul_mv_f32_f32_4_nsg=1_ne12=1_r2=1_r3=1'
+ggml_metal_library_compile_pipeline: loaded kernel_mul_mv_f32_f32_4_nsg=1_ne12=1_r2=1_r3=1     0x7c64e4ce00 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_bin_fuse_f32_f32_f32_4', name = 'kernel_bin_fuse_f32_f32_f32_4_op=0_nf=1_rb=1_cb=0'
+ggml_metal_library_compile_pipeline: loaded kernel_bin_fuse_f32_f32_f32_4_op=0_nf=1_rb=1_cb=0     0x7c64e4e300 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'fcpe_elementwise_fused', name = 'fcpe_elementwise_fused'
+ggml_metal_library_compile_pipeline: loaded fcpe_elementwise_fused                       0x7c64e4e680 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_mul_mv_ext_f32_f32_r1_4', name = 'kernel_mul_mv_ext_f32_f32_r1_4_nsg=2_nxpsg=8_ne12=1_r2=1_r3=1'
+ggml_metal_library_compile_pipeline: loaded kernel_mul_mv_ext_f32_f32_r1_4_nsg=2_nxpsg=8_ne12=1_r2=1_r3=1     0x7c64e4d180 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'fcpe_linear_glu', name = 'fcpe_linear_glu'
+ggml_metal_library_compile_pipeline: loaded fcpe_linear_glu                              0x7c64e4df80 | th_max = 1024 | th_width =   32
+ggml_metal_library_compile_pipeline: compiling pipeline: base = 'kernel_fcpe_mul_mm_f32_f32', name = 'kernel_fcpe_mul_mm_f32_f32_bci=0_bco=1_ne12=1_ne13=1_r2=1_r3=1'
+ggml_metal_library_compile_pipeline: loaded kernel_fcpe_mul_mm_f32_f32_bci=0_bco=1_ne12=1_ne13=1_r2=1_r3=1     0x7c64e4ed80 | th_max = 1024 | th_width =   32
+ggml_metal_free: deallocating
+PASS: 60 bitwise copies, 144 depthwise, 108 GroupNorm, 32 projection GLU, 35 bitwise im2col cases

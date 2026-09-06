@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-06",
+  "base_commit": "6dc1c5e605cdc474b430d24b73a8b9d7c096161e",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "machine": "arm64",
+  "gpu": "Apple M4 / MTL0 / Apple9 / unified memory",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.25.1)",
+  "cmake": "cmake version 4.1.2",
+  "ggml_archive_sha256": "cfb6512adda2853e6500a7c5b23f326987cb4c723e9f8f93c6c5a7e7e4861648",
+  "upstream_metal_files_unchanged": {
+    "src/ggml-metal/ggml-metal.metal": true,
+    "src/ggml-metal/ggml-metal-device.cpp": true,
+    "src/ggml-metal/ggml-metal-impl.h": true,
+    "src/ggml-metal/ggml-metal-ops.cpp": true
+  },
+  "source_sha256": {
+    "CMakeLists.txt": "e72e001f56453388651127db6e0cf53238a473f52cb7d6dca9a8c7bb370c648b",
+    "cmake/MetalPrecision.cmake": "452085772fc346220901c3730dde3a83b0a6613edce4b71dabac21a8748e89a9",
+    "src/fcpe.cpp": "493b76ae16404a595863281453b49e5248bad4c2c9366cd7bfda11c6121a0dba",
+    "src/audio.cpp": "19b8054a4e666decdb0ea0ad59d6d78c00bf53f377f690af9827882b9243d6d7",
+    "tests/test_backend.cpp": "ff20cf2f5f7abd15128a3c806d4096edcfacbd7668170d86bbc3d57b2707eab4",
+    "tests/test_fcpe.cpp": "103f8dbcb1c6fc72162f896669bb92a33865b6fdf0eae289975501273e375f33",
+    "scripts/benchmark.py": "ad2a737539d63ef6bfb3d2f71121c98e19de97410c19645ca9e5c5e1a42723c2",
+    "scripts/validate.py": "005958edd2089fef2b85accbb6f6afe9a0d7498641a93416b4211fed4705f352",
+    ".github/workflows/ci.yml": "260f540b6f7606d12bcc880c2a6806bc5f26031feb1aa4ee9bc0a41d16e27970"
+  },
+  "generated_sha256": {
+    "ggml-metal.metal": "1dd78ee92a0b01a2c6b03204de29c28476d4ec9ba43b9cd919f926e205e92af7",
+    "ggml-metal-device.cpp": "a8f7297910ec1c8b3a21d2b15d6b0c2ec70a3f6b4f5f34ff7c5fa7ab54c12798"
+  },
+  "strict_metal_library_sha256": "f67d87d48e53233eb74a56b90da79d8ce84eda248ceeced631b0e7c09b329f42",
+  "upstream_metal_library_sha256": "8a293f15bd9684a4a00e770392c0d26e27794ac312ead869296b3317d1961b98",
+  "options": {
+    "FCPE_METAL": true,
+    "FCPE_METAL_STRICT_F32": true,
+    "GGML_METAL_EMBED_LIBRARY": true,
+    "GGML_CCACHE": false,
+    "GGML_NATIVE": true,
+    "OpenMP_available": false
+  },
+  "benchmark_environment": {
+    "PYTORCH_ENABLE_MPS_FALLBACK": null,
+    "PYTORCH_MPS_FAST_MATH": null,
+    "PYTORCH_MPS_PREFER_METAL": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null
+  },
+  "verification": {
+    "cpu_ctest": "3/3 passed",
+    "metal_ctest": "5/5 passed",
+    "matrix_shapes": 19,
+    "matrix_max_abs_vs_double": 1.69602e-05,
+    "tools_regression": "3 tests passed, including 12 WAV encodings/containers",
+    "external_consumer": "Metal-enabled add_subdirectory build passed; CPU inference produced 11 frames",
+    "f32_parity": "CPU and Metal each passed 14 recordings in both direct-Mel and WAV modes",
+    "f16_parity": "Both passed 13 synthetic recordings; both failed JFK frame 885 in both modes, as expected for rounded storage",
+    "benchmark": "28 engine/length combinations passed the existing numerical gates",
+    "github_ci": "workflow updated, not run on GitHub",
+    "other_Apple_GPUs_and_Intel_Mac": "not tested"
+  },
+  "commands": [
+    "cmake -S . -B build-macos-metal -G Ninja -DCMAKE_BUILD_TYPE=Release -DFCPE_METAL=ON -DGGML_CCACHE=OFF -DFCPE_GGML_SOURCE_DIR=$PWD/build-macos-cpu/_deps/ggml-src -DFCPE_TEST_MODEL=$PWD/models/fcpe-f32.gguf -DFCPE_TEST_BACKEND=MTL0",
+    "cmake --build build-macos-metal --parallel 4",
+    "ctest --test-dir build-macos-metal --output-on-failure",
+    "python3 scripts/validate.py --cli build-macos-metal/bin/fcpe-cli --model models/fcpe-f32.gguf --backend MTL0 --wav validation/jfk.wav --output-dir validation/macos/metal-f32",
+    "python3 scripts/benchmark.py --prepare --wav validation/jfk.wav --output-dir validation/macos/benchmark",
+    "python3 scripts/benchmark.py --bench build-macos-metal/bin/fcpe-bench --output-dir validation/macos/benchmark"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "note": "Isolated original-node command buffers with fusion disabled; do not sum these as production graph timings.",
+  "gpu_ms_by_op": {
+    "baseline": {
+      "CONT": 11.966375,
+      "IM2COL": 1.7207500000000002,
+      "MUL_MAT": 7.634499999999999,
+      "ADD": 1.854209,
+      "GROUP_NORM": 2.204875,
+      "MUL": 1.1637500000000003,
+      "LEAKY_RELU": 0.022125,
+      "NORM": 0.17304199999999997,
+      "SIGMOID": 0.331292,
+      "CONV_2D_DW": 4.664459000000001,
+      "SILU": 0.28154199999999996
+    },
+    "final": {
+      "CONT": 0.108667,
+      "IM2COL": 0.08950000000000001,
+      "MUL_MAT": 7.800583000000001,
+      "ADD": 2.268251,
+      "GROUP_NORM": 0.059792,
+      "MUL": 0.948917,
+      "LEAKY_RELU": 0.022958,
+      "NORM": 0.16741699999999998,
+      "SIGMOID": 0.491125,
+      "CONV_2D_DW": 1.508958,
+      "SILU": 0.30958299999999994
+    }
+  }
+}

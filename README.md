@@ -14,7 +14,7 @@ This is an independent port, with project organization and ggml/GGUF integration
 - F32 GGUF for reference accuracy; optional F16 weight storage with documented threshold differences.
 - Validated Windows CPU and Vulkan paths, with direct depthwise convolution, strict F32 Vulkan fusion and tuned matrix multiplication.
 - Reusable C++ model sessions, a CLI, conversion tools, numerical tests and reproducible PyTorch / ONNX Runtime benchmarks.
-- CUDA and Metal build options wired to ggml; their native backends remain unvalidated here.
+- Metal on Apple M4: strict F32, optimized kernels/fusion and real-model validation; native ggml CUDA remains unvalidated.
 
 ## Model and upstream source
 
@@ -102,8 +102,9 @@ Remove-Item Env:FCPE_BUILD_DIR
 cmake -S . -B build-cuda -DFCPE_CUDA=ON
 cmake --build build-cuda -j
 # On macOS:
-cmake -S . -B build-metal -DFCPE_METAL=ON
+cmake -S . -B build-metal -DCMAKE_BUILD_TYPE=Release -DFCPE_METAL=ON
 cmake --build build-metal -j
+./build-metal/bin/fcpe-cli --list-backends
 ```
 
 The Vulkan build defaults to strict F32, device-local memory preference, matrix-kernel tuning and FCPE fusion. It generates a build-local ggml source copy; the dependency checkout is not modified. Shaders are compiled and embedded at build time. These settings affect other models sharing the same built Vulkan backend. Options and device-specific limitations are described in [the performance report](docs/PERFORMANCE.md) (Chinese).
@@ -190,6 +191,8 @@ Implementation details that matter for parity:
 - Frame count is based on the **resampled** length. This corrects the wheel's use of the original length for non-16-kHz input; the reference harness resamples first for an equivalent comparison.
 - Interpolating an entirely unvoiced recording returns zeros instead of indexing an empty set of voiced frames.
 
+On Apple M4 / macOS 27, CPU and the corrected Metal F32 backend pass all 14 recordings, with maximum full-path F0 error **0.001389 Hz** and no voiced/unvoiced differences. The device name is `MTL0`. Default `FCPE_METAL_STRICT_F32=ON` uses float operands instead of upstream's internal half rounding. F16 retains the known JFK frame-885 threshold difference. See [Metal validation and commands](docs/METAL.md). Three alternating rounds reduce the 11-second Metal network median from **32.344 to 12.442 ms (2.60×)** with no CPU fallback. Final Metal passes 15 full-audio cases, including 60 seconds, and 7 CTests under Metal Shader Validation. The wider framework run retains two ORT CPU long-input probability failures; all native FCPE cases pass.
+
 ## Performance
 
 The optimized path combines direct depthwise convolution, Vulkan memory selection, F32 matrix specialization, LayerNorm / affine / sigmoid-GLU / bias-activation fusion, and strided GLU views. The CPU frontend uses sparse Mel projection, cached FFT plans and batched parallel FFTs. It preserves whole-recording normalization semantics.
@@ -233,7 +236,7 @@ This port targets the released convolution-only model. Attention, harmonic embed
 
 Input GroupNorm spans both time and channels within each group. Processing independent chunks is not equivalent to processing the complete recording. This implementation keeps whole-recording semantics; graph memory grows with input length.
 
-Native ggml CUDA and Metal build options are present but were not validated on this Windows host. CUDA 12.8 rejected the installed MSVC 19.51 compiler; no unsupported-compiler override was used. Metal needs a macOS build and numerical check, including its internal operand precision. See [Metal notes and verification steps](docs/METAL.md) (Chinese).
+Native ggml CUDA remains unvalidated: CUDA 12.8 rejected the installed MSVC 19.51 compiler; no unsupported-compiler override was used. Metal has now been built and validated on Apple M4. Other Apple GPUs, Intel Macs and older macOS releases remain untested. See [Metal results and verification steps](docs/METAL.md) (Chinese).
 
 ## License and attribution
 

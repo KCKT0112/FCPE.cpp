@@ -23,7 +23,10 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 ENGINES = ["ggml_reference_cpu", "ggml_cpu", "ggml_reference_vulkan", "ggml_direct_vulkan",
            "ggml_previous_vulkan", "ggml_local_vulkan", "ggml_vulkan",
-           "torch_cpu", "torch_cuda", "ort_cpu", "ort_cuda"]
+           "torch_cpu", "torch_cuda", "ort_cpu", "ort_cuda",
+           "ggml_reference_metal", "ggml_metal", "torch_mps"]
+DEFAULT_ENGINES = (["ggml_reference_cpu", "ggml_cpu", "ggml_reference_metal", "ggml_metal",
+                    "torch_cpu", "torch_mps", "ort_cpu"] if sys.platform == "darwin" else ENGINES[:-3])
 
 
 def setup_paths(out):
@@ -103,19 +106,27 @@ def worker(args):
     handles = []
     if engine.startswith("torch"):
         reference = reference_model(args.threads)
-        device = "cuda" if engine.endswith("cuda") else "cpu"
+        device = engine.removeprefix("torch_")
         if device == "cuda" and not torch.cuda.is_available():
             raise RuntimeError("PyTorch CUDA unavailable")
+        if device == "mps" and not torch.backends.mps.is_available():
+            raise RuntimeError("PyTorch MPS unavailable")
+        if device == "mps" and os.environ.get("PYTORCH_ENABLE_MPS_FALLBACK") == "1":
+            raise RuntimeError("Disable PYTORCH_ENABLE_MPS_FALLBACK for an MPS benchmark")
         model = reference.model.to(device)
         if device == "cuda":
             torch.backends.cudnn.benchmark = True
             torch.cuda.synchronize()
+        elif device == "mps":
+            torch.mps.synchronize()
         load_ms = (time.perf_counter() - start) * 1000
         def forward(x):
             tensor = torch.from_numpy(x).to(device)
             out = model(tensor).cpu().numpy()
             if device == "cuda":
                 torch.cuda.synchronize()
+            elif device == "mps":
+                torch.mps.synchronize()
             return out
     else:
         if (ROOT / ".ort-deps").is_dir():
@@ -217,14 +228,15 @@ def run(args):
                 command = [str(args.bench.resolve()), "--model", str(args.model.resolve()),
                            "--mel", str(args.output_dir / f"{name}.mel.f32"), "--output", str(output),
                            "--dump", str(args.output_dir / f"{engine}-{name}.f32"),
-                           "--backend", "Vulkan0" if engine.endswith("vulkan") else "cpu",
+                           "--backend", ("Vulkan0" if engine.endswith("vulkan") else
+                                         args.metal_backend if engine.endswith("metal") else "cpu"),
                            "--threads", str(args.threads), "--warmup", str(args.warmup), "--repeats", str(args.repeats),
                            "--wav", str(args.output_dir / f"{name}.wav")]
                 if "reference" in engine:
                     command.append("--reference-graph")
                 environment = os.environ.copy()
                 for key in list(environment):
-                    if key.startswith(("FCPE_VK_", "GGML_VK_")):
+                    if key.startswith(("FCPE_VK_", "GGML_VK_", "FCPE_METAL_", "GGML_METAL_")):
                         environment.pop(key)
                 if engine in ("ggml_reference_vulkan", "ggml_direct_vulkan", "ggml_previous_vulkan"):
                     environment["FCPE_VK_HOST_VISIBLE"] = "1"
@@ -238,6 +250,8 @@ def run(args):
                 if proc.returncode:
                     raise RuntimeError(proc.stderr + proc.stdout)
                 row = json.loads(output.read_text())
+                if engine.endswith("metal") and not row["accelerator_compute_nodes"]:
+                    raise RuntimeError("Metal benchmark did not execute any accelerator nodes")
                 row.update(stats(row["samples_ms"]))
                 if row.get("end_to_end_samples_ms"):
                     row["end_to_end"] = stats(row["end_to_end_samples_ms"])
@@ -250,7 +264,8 @@ def run(args):
                       "gguf_sha256": hashlib.sha256(args.model.read_bytes()).hexdigest(),
                       "executable_sha256": hashlib.sha256(args.bench.read_bytes()).hexdigest(),
                       "runtime_library_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
-                                                 for p in sorted(args.bench.parent.glob("*.dll"))}}
+                                                 for p in sorted({p.resolve() for pattern in ("*.dll", "*.dylib", "*.so*")
+                                                                  for p in args.bench.parent.glob(pattern) if p.is_file()})}}
             (args.output_dir / f"{engine}.json").write_text(json.dumps(report, indent=2) + "\n")
         else:
             subprocess.run([sys.executable, str(Path(__file__).resolve()), "--worker", engine,
@@ -289,18 +304,21 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--prepare", action="store_true")
     parser.add_argument("--summarize", action="store_true", help="Recheck and aggregate existing engine reports, without timing again")
-    parser.add_argument("--worker", choices=("torch_cpu", "torch_cuda", "ort_cpu", "ort_cuda"))
+    parser.add_argument("--worker", choices=("torch_cpu", "torch_cuda", "torch_mps", "ort_cpu", "ort_cuda"))
     parser.add_argument("--profile-ort", action="store_true", help="Instrument an ORT worker in a separate diagnostic run")
     parser.add_argument("--output-dir", type=Path, default=ROOT / "validation/benchmark")
     parser.add_argument("--wav", type=Path, default=ROOT / "validation/jfk.wav")
     parser.add_argument("--model", type=Path, default=ROOT / "models/fcpe-f32.gguf")
-    parser.add_argument("--bench", type=Path, default=ROOT / "build-vulkan/bin/fcpe-bench.exe")
+    parser.add_argument("--bench", type=Path, default=ROOT / ("build-metal/bin/fcpe-bench" if sys.platform == "darwin" else
+                                                           "build-vulkan/bin/fcpe-bench.exe" if os.name == "nt" else
+                                                           "build-vulkan/bin/fcpe-bench"))
+    parser.add_argument("--metal-backend", default="MTL0", help="Metal device name from fcpe-cli --list-backends")
     parser.add_argument("--cuda-dir", default="C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.8")
     parser.add_argument("--seconds", type=float, nargs="+", default=[0.1, 1, 3, 11])
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--repeats", type=int, default=20)
     parser.add_argument("--warmup", type=int, default=3)
-    parser.add_argument("--engines", nargs="+", choices=ENGINES, default=ENGINES)
+    parser.add_argument("--engines", nargs="+", choices=ENGINES, default=DEFAULT_ENGINES)
     args = parser.parse_args()
     if args.profile_ort and (not args.worker or not args.worker.startswith("ort")):
         parser.error("--profile-ort requires --worker ort_cpu or ort_cuda")

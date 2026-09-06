@@ -1,0 +1,2344 @@
+{
+  "note": "Complete numerical metrics; verbose CLI pipeline logs omitted. No numerical failures removed.",
+  "reports": {
+    "metal-f32": {
+      "model": "models/fcpe-f32.gguf",
+      "model_sha256": "16c289d003976a1c0c7b2d456115737194b9772b9f7570d376c89a1b3b191fc6",
+      "torch": "2.10.0",
+      "backend": "MTL0",
+      "type": "f32",
+      "cases": [
+        {
+          "name": "one_sample",
+          "sample_rate": 16000,
+          "samples": 1,
+          "frames": 1,
+          "torch_ms": 70.40958300058264,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 5.587935447692871e-09,
+              "rmse": 1.0386504848683436e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 5.587935447692871e-09,
+              "rmse": 1.0386504848683436e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "short",
+          "sample_rate": 16000,
+          "samples": 159,
+          "frames": 1,
+          "torch_ms": 67.79383298999164,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 5.587935447692871e-09,
+              "rmse": 1.0386504848683436e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 5.587935447692871e-09,
+              "rmse": 1.0386504848683436e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "hop_boundary",
+          "sample_rate": 16000,
+          "samples": 160,
+          "frames": 2,
+          "torch_ms": 69.16716600244399,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.189779818058014e-08,
+              "rmse": 5.478508241481708e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.189779818058014e-08,
+              "rmse": 5.478508241481708e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "pad_boundary",
+          "sample_rate": 16000,
+          "samples": 433,
+          "frames": 3,
+          "torch_ms": 69.0565420081839,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.0477378964424133e-08,
+              "rmse": 1.6010451623197895e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.0477378964424133e-08,
+              "rmse": 1.6010451623197895e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "silence",
+          "sample_rate": 16000,
+          "samples": 8000,
+          "frames": 51,
+          "torch_ms": 74.47583400062285,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.0658141036401503e-14,
+              "rmse": 8.118488375279758e-16
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.0658141036401503e-14,
+              "rmse": 8.118488375279758e-16
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_8000",
+          "sample_rate": 8000,
+          "samples": 6037,
+          "frames": 76,
+          "torch_ms": 74.38158300647046,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.3113021850585938e-06,
+              "rmse": 3.4788391963265934e-08
+            },
+            "f0": {
+              "max_abs": 0.0001983642578125,
+              "rmse": 5.644558038267623e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0001983642578125,
+              "rmse": 5.644558038267623e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.009164810180664062,
+              "rmse": 0.0006404339805985601
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 4.636373245404339e-08
+            },
+            "probabilities": {
+              "max_abs": 0.0002028942108154297,
+              "rmse": 4.773207294356642e-06
+            },
+            "f0": {
+              "max_abs": 0.000640869140625,
+              "rmse": 0.00021840248702346819
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000640869140625,
+              "rmse": 0.00021840248702346819
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_16000",
+          "sample_rate": 16000,
+          "samples": 12037,
+          "frames": 76,
+          "torch_ms": 73.89904200681485,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.385807991027832e-06,
+              "rmse": 3.735014248196692e-08
+            },
+            "f0": {
+              "max_abs": 0.0001373291015625,
+              "rmse": 5.4597114859575436e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0001373291015625,
+              "rmse": 5.4597114859575436e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 5.187902028527288e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 1.7717473539106733e-08
+            },
+            "probabilities": {
+              "max_abs": 1.6987323760986328e-06,
+              "rmse": 4.2175106121295945e-08
+            },
+            "f0": {
+              "max_abs": 0.0001373291015625,
+              "rmse": 5.3834271623850683e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0001373291015625,
+              "rmse": 5.3834271623850683e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_22050",
+          "sample_rate": 22050,
+          "samples": 16574,
+          "frames": 76,
+          "torch_ms": 76.10554099665023,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 7.152557373046875e-07,
+              "rmse": 3.044297753841903e-08
+            },
+            "f0": {
+              "max_abs": 0.000152587890625,
+              "rmse": 5.3634726377278864e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000152587890625,
+              "rmse": 5.3634726377278864e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.012072563171386719,
+              "rmse": 0.0007479966590427777
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 5.161132053946116e-08
+            },
+            "probabilities": {
+              "max_abs": 0.00029602646827697754,
+              "rmse": 5.704318798940518e-06
+            },
+            "f0": {
+              "max_abs": 0.0008697509765625,
+              "rmse": 0.00024369475155866673
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0008697509765625,
+              "rmse": 0.00024369475155866673
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_44100",
+          "sample_rate": 44100,
+          "samples": 33112,
+          "frames": 76,
+          "torch_ms": 76.56262500677258,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 8.344650268554688e-07,
+              "rmse": 3.101593020110739e-08
+            },
+            "f0": {
+              "max_abs": 0.000213623046875,
+              "rmse": 5.805098802586991e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000213623046875,
+              "rmse": 5.805098802586991e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.013609886169433594,
+              "rmse": 0.0010178368067968052
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 5.9131752302270785e-08
+            },
+            "probabilities": {
+              "max_abs": 0.00041180849075317383,
+              "rmse": 1.0015909772973761e-05
+            },
+            "f0": {
+              "max_abs": 0.0013885498046875,
+              "rmse": 0.00042033521836752933
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0013885498046875,
+              "rmse": 0.00042033521836752933
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_48000",
+          "sample_rate": 48000,
+          "samples": 36037,
+          "frames": 76,
+          "torch_ms": 76.73087500734255,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.7583370208740234e-06,
+              "rmse": 4.238485677511267e-08
+            },
+            "f0": {
+              "max_abs": 0.0001983642578125,
+              "rmse": 5.677029397445172e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0001983642578125,
+              "rmse": 5.677029397445172e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.012712478637695312,
+              "rmse": 0.0010201305086043973
+            },
+            "mel_magnitude": {
+              "max_abs": 1.430511474609375e-06,
+              "rmse": 6.72842008328375e-08
+            },
+            "probabilities": {
+              "max_abs": 0.00036647915840148926,
+              "rmse": 9.2107292711391e-06
+            },
+            "f0": {
+              "max_abs": 0.0013427734375,
+              "rmse": 0.00041824554851244155
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0013427734375,
+              "rmse": 0.00041824554851244155
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "noise",
+          "sample_rate": 16000,
+          "samples": 8147,
+          "frames": 51,
+          "torch_ms": 76.14095800090581,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.3737007975578308e-08,
+              "rmse": 1.202036998313278e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 4.76837158203125e-07,
+              "rmse": 6.857201357311342e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 2.2351741790771484e-08,
+              "rmse": 2.42239793174646e-09
+            },
+            "probabilities": {
+              "max_abs": 1.4435499906539917e-08,
+              "rmse": 1.2622002445942716e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "voiced_unvoiced",
+          "sample_rate": 16000,
+          "samples": 48037,
+          "frames": 301,
+          "torch_ms": 88.51570900878869,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 8.940696716308594e-07,
+              "rmse": 2.7427297877060662e-08
+            },
+            "f0": {
+              "max_abs": 0.00030517578125,
+              "rmse": 5.618496555713061e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.00030517578125,
+              "rmse": 7.854942429341889e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 2.419322479367287e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 2.6318110499087413e-08
+            },
+            "probabilities": {
+              "max_abs": 9.238719940185547e-07,
+              "rmse": 2.8735904554265266e-08
+            },
+            "f0": {
+              "max_abs": 0.000152587890625,
+              "rmse": 5.349078695087097e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000152587890625,
+              "rmse": 7.478282630111163e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "stereo",
+          "sample_rate": 16000,
+          "samples": 12000,
+          "frames": 76,
+          "torch_ms": 75.61466700281017,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 9.238719940185547e-07,
+              "rmse": 2.561493100280426e-08
+            },
+            "f0": {
+              "max_abs": 0.000213623046875,
+              "rmse": 4.922678976594624e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000213623046875,
+              "rmse": 8.258980278061659e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 4.41061835398918e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 4.76837158203125e-07,
+              "rmse": 9.714351613076799e-09
+            },
+            "probabilities": {
+              "max_abs": 1.0728836059570312e-06,
+              "rmse": 2.9784470563414038e-08
+            },
+            "f0": {
+              "max_abs": 0.0002288818359375,
+              "rmse": 4.8220772240166246e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0002288818359375,
+              "rmse": 8.090196594536776e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "recording_0_jfk",
+          "sample_rate": 16000,
+          "samples": 176000,
+          "frames": 1101,
+          "torch_ms": 118.32958299783058,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.2814998626708984e-06,
+              "rmse": 2.2166720435231802e-08
+            },
+            "f0": {
+              "max_abs": 0.000274658203125,
+              "rmse": 5.926096698878501e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000274658203125,
+              "rmse": 6.76047500980094e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 9.721917759658219e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 7.973839426571749e-09
+            },
+            "probabilities": {
+              "max_abs": 1.3709068298339844e-06,
+              "rmse": 2.2563234735573417e-08
+            },
+            "f0": {
+              "max_abs": 0.000274658203125,
+              "rmse": 6.0358484519266634e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000274658203125,
+              "rmse": 6.885679511425823e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        }
+      ],
+      "note": "Non-16k input is resampled before the original Wav2Mel call to correct the wheel's original-length frame-count bug.",
+      "failed": [],
+      "passed": true,
+      "limits": {
+        "log_mel_max_abs": 0.02,
+        "log_mel_rmse": 0.002,
+        "linear_mel_max_abs": 1e-05,
+        "direct_probabilities_max_abs": 1e-05,
+        "wav_probabilities_max_abs": 0.0005,
+        "f0_max_abs_hz": 0.02,
+        "uv_mismatch": 0
+      }
+    },
+    "metal-f32-long": {
+      "model": "models/fcpe-f32.gguf",
+      "model_sha256": "16c289d003976a1c0c7b2d456115737194b9772b9f7570d376c89a1b3b191fc6",
+      "torch": "2.10.0",
+      "backend": "MTL0",
+      "type": "f32",
+      "cases": [
+        {
+          "name": "one_sample",
+          "sample_rate": 16000,
+          "samples": 1,
+          "frames": 1,
+          "torch_ms": 98.9417500095442,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 5.587935447692871e-09,
+              "rmse": 1.0386504848683436e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 5.587935447692871e-09,
+              "rmse": 1.0386504848683436e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "short",
+          "sample_rate": 16000,
+          "samples": 159,
+          "frames": 1,
+          "torch_ms": 69.72941699496005,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 5.587935447692871e-09,
+              "rmse": 1.0386504848683436e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 5.587935447692871e-09,
+              "rmse": 1.0386504848683436e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "hop_boundary",
+          "sample_rate": 16000,
+          "samples": 160,
+          "frames": 2,
+          "torch_ms": 72.44145800359547,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.189779818058014e-08,
+              "rmse": 5.478508241481708e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.189779818058014e-08,
+              "rmse": 5.478508241481708e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "pad_boundary",
+          "sample_rate": 16000,
+          "samples": 433,
+          "frames": 3,
+          "torch_ms": 73.86637500894722,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.0477378964424133e-08,
+              "rmse": 1.6010451623197895e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.0477378964424133e-08,
+              "rmse": 1.6010451623197895e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "silence",
+          "sample_rate": 16000,
+          "samples": 8000,
+          "frames": 51,
+          "torch_ms": 75.75820900092367,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.0658141036401503e-14,
+              "rmse": 8.118488375279758e-16
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.0658141036401503e-14,
+              "rmse": 8.118488375279758e-16
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_8000",
+          "sample_rate": 8000,
+          "samples": 6037,
+          "frames": 76,
+          "torch_ms": 76.25883400032762,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.3113021850585938e-06,
+              "rmse": 3.4788391963265934e-08
+            },
+            "f0": {
+              "max_abs": 0.0001983642578125,
+              "rmse": 5.644558038267623e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0001983642578125,
+              "rmse": 5.644558038267623e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.009164810180664062,
+              "rmse": 0.0006404339805985601
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 4.636373245404339e-08
+            },
+            "probabilities": {
+              "max_abs": 0.0002028942108154297,
+              "rmse": 4.773207294356642e-06
+            },
+            "f0": {
+              "max_abs": 0.000640869140625,
+              "rmse": 0.00021840248702346819
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000640869140625,
+              "rmse": 0.00021840248702346819
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_16000",
+          "sample_rate": 16000,
+          "samples": 12037,
+          "frames": 76,
+          "torch_ms": 73.93558400508482,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.385807991027832e-06,
+              "rmse": 3.735014248196692e-08
+            },
+            "f0": {
+              "max_abs": 0.0001373291015625,
+              "rmse": 5.4597114859575436e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0001373291015625,
+              "rmse": 5.4597114859575436e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 5.187902028527288e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 1.7717473539106733e-08
+            },
+            "probabilities": {
+              "max_abs": 1.6987323760986328e-06,
+              "rmse": 4.2175106121295945e-08
+            },
+            "f0": {
+              "max_abs": 0.0001373291015625,
+              "rmse": 5.3834271623850683e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0001373291015625,
+              "rmse": 5.3834271623850683e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_22050",
+          "sample_rate": 22050,
+          "samples": 16574,
+          "frames": 76,
+          "torch_ms": 76.315208003507,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 7.152557373046875e-07,
+              "rmse": 3.044297753841903e-08
+            },
+            "f0": {
+              "max_abs": 0.000152587890625,
+              "rmse": 5.3634726377278864e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000152587890625,
+              "rmse": 5.3634726377278864e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.012072563171386719,
+              "rmse": 0.0007479966590427777
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 5.161132053946116e-08
+            },
+            "probabilities": {
+              "max_abs": 0.00029602646827697754,
+              "rmse": 5.704318798940518e-06
+            },
+            "f0": {
+              "max_abs": 0.0008697509765625,
+              "rmse": 0.00024369475155866673
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0008697509765625,
+              "rmse": 0.00024369475155866673
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_44100",
+          "sample_rate": 44100,
+          "samples": 33112,
+          "frames": 76,
+          "torch_ms": 74.84741699590813,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 8.344650268554688e-07,
+              "rmse": 3.101593020110739e-08
+            },
+            "f0": {
+              "max_abs": 0.000213623046875,
+              "rmse": 5.805098802586991e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000213623046875,
+              "rmse": 5.805098802586991e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.013609886169433594,
+              "rmse": 0.0010178368067968052
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 5.9131752302270785e-08
+            },
+            "probabilities": {
+              "max_abs": 0.00041180849075317383,
+              "rmse": 1.0015909772973761e-05
+            },
+            "f0": {
+              "max_abs": 0.0013885498046875,
+              "rmse": 0.00042033521836752933
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0013885498046875,
+              "rmse": 0.00042033521836752933
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_48000",
+          "sample_rate": 48000,
+          "samples": 36037,
+          "frames": 76,
+          "torch_ms": 77.20429199980572,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.7583370208740234e-06,
+              "rmse": 4.238485677511267e-08
+            },
+            "f0": {
+              "max_abs": 0.0001983642578125,
+              "rmse": 5.677029397445172e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0001983642578125,
+              "rmse": 5.677029397445172e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.012712478637695312,
+              "rmse": 0.0010201305086043973
+            },
+            "mel_magnitude": {
+              "max_abs": 1.430511474609375e-06,
+              "rmse": 6.72842008328375e-08
+            },
+            "probabilities": {
+              "max_abs": 0.00036647915840148926,
+              "rmse": 9.2107292711391e-06
+            },
+            "f0": {
+              "max_abs": 0.0013427734375,
+              "rmse": 0.00041824554851244155
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0013427734375,
+              "rmse": 0.00041824554851244155
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "noise",
+          "sample_rate": 16000,
+          "samples": 8147,
+          "frames": 51,
+          "torch_ms": 72.49574999150354,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.3737007975578308e-08,
+              "rmse": 1.202036998313278e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 4.76837158203125e-07,
+              "rmse": 6.857201357311342e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 2.2351741790771484e-08,
+              "rmse": 2.42239793174646e-09
+            },
+            "probabilities": {
+              "max_abs": 1.4435499906539917e-08,
+              "rmse": 1.2622002445942716e-09
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "voiced_unvoiced",
+          "sample_rate": 16000,
+          "samples": 48037,
+          "frames": 301,
+          "torch_ms": 87.56324999558274,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 8.940696716308594e-07,
+              "rmse": 2.7427297877060662e-08
+            },
+            "f0": {
+              "max_abs": 0.00030517578125,
+              "rmse": 5.618496555713061e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.00030517578125,
+              "rmse": 7.854942429341889e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 2.419322479367287e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 2.6318110499087413e-08
+            },
+            "probabilities": {
+              "max_abs": 9.238719940185547e-07,
+              "rmse": 2.8735904554265266e-08
+            },
+            "f0": {
+              "max_abs": 0.000152587890625,
+              "rmse": 5.349078695087097e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000152587890625,
+              "rmse": 7.478282630111163e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "stereo",
+          "sample_rate": 16000,
+          "samples": 12000,
+          "frames": 76,
+          "torch_ms": 74.78129200171679,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 9.238719940185547e-07,
+              "rmse": 2.561493100280426e-08
+            },
+            "f0": {
+              "max_abs": 0.000213623046875,
+              "rmse": 4.922678976594624e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000213623046875,
+              "rmse": 8.258980278061659e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 4.41061835398918e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 4.76837158203125e-07,
+              "rmse": 9.714351613076799e-09
+            },
+            "probabilities": {
+              "max_abs": 1.0728836059570312e-06,
+              "rmse": 2.9784470563414038e-08
+            },
+            "f0": {
+              "max_abs": 0.0002288818359375,
+              "rmse": 4.8220772240166246e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0002288818359375,
+              "rmse": 8.090196594536776e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "recording_0_jfk",
+          "sample_rate": 16000,
+          "samples": 176000,
+          "frames": 1101,
+          "torch_ms": 117.55825000000186,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 1.2814998626708984e-06,
+              "rmse": 2.2166720435231802e-08
+            },
+            "f0": {
+              "max_abs": 0.000274658203125,
+              "rmse": 5.926096698878501e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000274658203125,
+              "rmse": 6.76047500980094e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 9.721917759658219e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 7.973839426571749e-09
+            },
+            "probabilities": {
+              "max_abs": 1.3709068298339844e-06,
+              "rmse": 2.2563234735573417e-08
+            },
+            "f0": {
+              "max_abs": 0.000274658203125,
+              "rmse": 6.0358484519266634e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.000274658203125,
+              "rmse": 6.885679511425823e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "recording_1_60s",
+          "sample_rate": 16000,
+          "samples": 960000,
+          "frames": 6001,
+          "torch_ms": 277.42195800237823,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 2.115964889526367e-06,
+              "rmse": 2.2454692384054134e-08
+            },
+            "f0": {
+              "max_abs": 0.0003662109375,
+              "rmse": 6.339771308957124e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0003662109375,
+              "rmse": 7.215297713035915e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 9.728837139614165e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 8.062868604836009e-09
+            },
+            "probabilities": {
+              "max_abs": 1.3113021850585938e-06,
+              "rmse": 2.0578053783874188e-08
+            },
+            "f0": {
+              "max_abs": 0.00030517578125,
+              "rmse": 6.387346987475711e-05
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.00030517578125,
+              "rmse": 7.26944362267248e-05
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        }
+      ],
+      "note": "Non-16k input is resampled before the original Wav2Mel call to correct the wheel's original-length frame-count bug.",
+      "failed": [],
+      "passed": true,
+      "limits": {
+        "log_mel_max_abs": 0.02,
+        "log_mel_rmse": 0.002,
+        "linear_mel_max_abs": 1e-05,
+        "direct_probabilities_max_abs": 1e-05,
+        "wav_probabilities_max_abs": 0.0005,
+        "f0_max_abs_hz": 0.02,
+        "uv_mismatch": 0
+      }
+    },
+    "metal-f16": {
+      "model": "models/fcpe-f16.gguf",
+      "model_sha256": "f92974ca7f43aa27fdc4af806b2294f6b6673a52dea2ec73d4a7560644a3143b",
+      "torch": "2.10.0",
+      "backend": "MTL0",
+      "type": "f16",
+      "cases": [
+        {
+          "name": "one_sample",
+          "sample_rate": 16000,
+          "samples": 1,
+          "frames": 1,
+          "torch_ms": 72.05512499785982,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.3848918974399567e-06,
+              "rmse": 6.124194752983109e-07
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.3848918974399567e-06,
+              "rmse": 6.124194752983109e-07
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "short",
+          "sample_rate": 16000,
+          "samples": 159,
+          "frames": 1,
+          "torch_ms": 70.48116700025275,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.3848918974399567e-06,
+              "rmse": 6.124194752983109e-07
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.3848918974399567e-06,
+              "rmse": 6.124194752983109e-07
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "hop_boundary",
+          "sample_rate": 16000,
+          "samples": 160,
+          "frames": 2,
+          "torch_ms": 71.4359580015298,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.207707777619362e-06,
+              "rmse": 4.7501451581297146e-07
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.207707777619362e-06,
+              "rmse": 4.7501451581297146e-07
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "pad_boundary",
+          "sample_rate": 16000,
+          "samples": 433,
+          "frames": 3,
+          "torch_ms": 67.84145900746807,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 8.713104762136936e-07,
+              "rmse": 9.580981413665432e-08
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 8.713104762136936e-07,
+              "rmse": 9.580981413665432e-08
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "silence",
+          "sample_rate": 16000,
+          "samples": 8000,
+          "frames": 51,
+          "torch_ms": 71.7644160031341,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.869460307726058e-12,
+              "rmse": 2.9457478312114193e-13
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 3.869460307726058e-12,
+              "rmse": 2.9457478312114193e-13
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_8000",
+          "sample_rate": 8000,
+          "samples": 6037,
+          "frames": 76,
+          "torch_ms": 74.36008400691207,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 0.0007187128067016602,
+              "rmse": 2.693930498678556e-05
+            },
+            "f0": {
+              "max_abs": 0.0028228759765625,
+              "rmse": 0.001342633116841745
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0028228759765625,
+              "rmse": 0.001342633116841745
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.009164810180664062,
+              "rmse": 0.0006404339805985601
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 4.636373245404339e-08
+            },
+            "probabilities": {
+              "max_abs": 0.0007273554801940918,
+              "rmse": 2.6017323889046068e-05
+            },
+            "f0": {
+              "max_abs": 0.002960205078125,
+              "rmse": 0.0013050373401385681
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.002960205078125,
+              "rmse": 0.0013050373401385681
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_16000",
+          "sample_rate": 16000,
+          "samples": 12037,
+          "frames": 76,
+          "torch_ms": 79.62099999713246,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 0.0007168054580688477,
+              "rmse": 2.6955704665711804e-05
+            },
+            "f0": {
+              "max_abs": 0.0028228759765625,
+              "rmse": 0.0013317253687000297
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0028228759765625,
+              "rmse": 0.0013317253687000297
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 5.187902028527288e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 1.7717473539106733e-08
+            },
+            "probabilities": {
+              "max_abs": 0.0007168054580688477,
+              "rmse": 2.6953869698892395e-05
+            },
+            "f0": {
+              "max_abs": 0.0028076171875,
+              "rmse": 0.0013318829398674746
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0028076171875,
+              "rmse": 0.0013318829398674746
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_22050",
+          "sample_rate": 22050,
+          "samples": 16574,
+          "frames": 76,
+          "torch_ms": 74.22020900412463,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 0.0007174015045166016,
+              "rmse": 2.7011676485952724e-05
+            },
+            "f0": {
+              "max_abs": 0.0028076171875,
+              "rmse": 0.0013479266233728654
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0028076171875,
+              "rmse": 0.0013479266233728654
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.012072563171386719,
+              "rmse": 0.0007479966590427777
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 5.161132053946116e-08
+            },
+            "probabilities": {
+              "max_abs": 0.0007215142250061035,
+              "rmse": 2.8840032097429083e-05
+            },
+            "f0": {
+              "max_abs": 0.002838134765625,
+              "rmse": 0.001428073612729838
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.002838134765625,
+              "rmse": 0.001428073612729838
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_44100",
+          "sample_rate": 44100,
+          "samples": 33112,
+          "frames": 76,
+          "torch_ms": 77.12087499385234,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 0.0007152557373046875,
+              "rmse": 2.6917390072990896e-05
+            },
+            "f0": {
+              "max_abs": 0.00274658203125,
+              "rmse": 0.0013262459380395705
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.00274658203125,
+              "rmse": 0.0013262459380395705
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.013609886169433594,
+              "rmse": 0.0010178368067968052
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 5.9131752302270785e-08
+            },
+            "probabilities": {
+              "max_abs": 0.0008231997489929199,
+              "rmse": 3.0658428201819065e-05
+            },
+            "f0": {
+              "max_abs": 0.003265380859375,
+              "rmse": 0.001461647755060568
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.003265380859375,
+              "rmse": 0.001461647755060568
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "harmonic_48000",
+          "sample_rate": 48000,
+          "samples": 36037,
+          "frames": 76,
+          "torch_ms": 74.31937499495689,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 0.0007150769233703613,
+              "rmse": 2.6914574911334668e-05
+            },
+            "f0": {
+              "max_abs": 0.00274658203125,
+              "rmse": 0.0013165712313505655
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.00274658203125,
+              "rmse": 0.0013165712313505655
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 0.012712478637695312,
+              "rmse": 0.0010201305086043973
+            },
+            "mel_magnitude": {
+              "max_abs": 1.430511474609375e-06,
+              "rmse": 6.72842008328375e-08
+            },
+            "probabilities": {
+              "max_abs": 0.0007071793079376221,
+              "rmse": 2.968368999406994e-05
+            },
+            "f0": {
+              "max_abs": 0.0028076171875,
+              "rmse": 0.0014207330415323678
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0028076171875,
+              "rmse": 0.0014207330415323678
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "noise",
+          "sample_rate": 16000,
+          "samples": 8147,
+          "frames": 51,
+          "torch_ms": 71.84425000741612,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 2.2621825337409973e-06,
+              "rmse": 3.531050314325721e-07
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 4.76837158203125e-07,
+              "rmse": 6.857201357311342e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 2.2351741790771484e-08,
+              "rmse": 2.42239793174646e-09
+            },
+            "probabilities": {
+              "max_abs": 2.2621825337409973e-06,
+              "rmse": 3.5334101234458436e-07
+            },
+            "f0": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "jointly_voiced_f0": null,
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "voiced_unvoiced",
+          "sample_rate": 16000,
+          "samples": 48037,
+          "frames": 301,
+          "torch_ms": 88.14554200216662,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 0.00025135278701782227,
+              "rmse": 6.9137757638671975e-06
+            },
+            "f0": {
+              "max_abs": 0.0023345947265625,
+              "rmse": 0.0005123127344384052
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0023345947265625,
+              "rmse": 0.0007162391210759886
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 2.419322479367287e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 2.6318110499087413e-08
+            },
+            "probabilities": {
+              "max_abs": 0.0002511143684387207,
+              "rmse": 6.9099637978089425e-06
+            },
+            "f0": {
+              "max_abs": 0.0023345947265625,
+              "rmse": 0.0005078071088965355
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0023345947265625,
+              "rmse": 0.000709940028625078
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "stereo",
+          "sample_rate": 16000,
+          "samples": 12000,
+          "frames": 76,
+          "torch_ms": 74.52004200604279,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 0.0002772212028503418,
+              "rmse": 8.32819453084707e-06
+            },
+            "f0": {
+              "max_abs": 0.0021820068359375,
+              "rmse": 0.0005695724178701588
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0021820068359375,
+              "rmse": 0.0009555949897370103
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 4.41061835398918e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 4.76837158203125e-07,
+              "rmse": 9.714351613076799e-09
+            },
+            "probabilities": {
+              "max_abs": 0.0002772808074951172,
+              "rmse": 8.329086549492627e-06
+            },
+            "f0": {
+              "max_abs": 0.0022430419921875,
+              "rmse": 0.0005715697933388242
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.0022430419921875,
+              "rmse": 0.0009589460684244535
+            },
+            "uv_mismatch": 0,
+            "uv_mismatch_details": []
+          }
+        },
+        {
+          "name": "recording_0_jfk",
+          "sample_rate": 16000,
+          "samples": 176000,
+          "frames": 1101,
+          "torch_ms": 118.22541599394754,
+          "mel": {
+            "mel": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "mel_magnitude": {
+              "max_abs": 0.0,
+              "rmse": 0.0
+            },
+            "probabilities": {
+              "max_abs": 0.0019589662551879883,
+              "rmse": 2.731867233249887e-05
+            },
+            "f0": {
+              "max_abs": 199.21307373046875,
+              "rmse": 6.003771924427859
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.006378173828125,
+              "rmse": 0.0013686727974242111
+            },
+            "uv_mismatch": 1,
+            "uv_mismatch_details": [
+              {
+                "frame": 885,
+                "reference_confidence": 0.005989063996821642,
+                "cpp_confidence": 0.006002661772072315,
+                "reference_f0": 0.0,
+                "cpp_f0": 199.21307373046875
+              }
+            ]
+          },
+          "wav": {
+            "mel": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 9.721917759658219e-08
+            },
+            "mel_magnitude": {
+              "max_abs": 9.5367431640625e-07,
+              "rmse": 7.973839426571749e-09
+            },
+            "probabilities": {
+              "max_abs": 0.0019590258598327637,
+              "rmse": 2.7319081260620717e-05
+            },
+            "f0": {
+              "max_abs": 199.21311950683594,
+              "rmse": 6.003773304296472
+            },
+            "jointly_voiced_f0": {
+              "max_abs": 0.006439208984375,
+              "rmse": 0.0013703055530108561
+            },
+            "uv_mismatch": 1,
+            "uv_mismatch_details": [
+              {
+                "frame": 885,
+                "reference_confidence": 0.005989063996821642,
+                "cpp_confidence": 0.006002673413604498,
+                "reference_f0": 0.0,
+                "cpp_f0": 199.21311950683594
+              }
+            ]
+          }
+        }
+      ],
+      "note": "Non-16k input is resampled before the original Wav2Mel call to correct the wheel's original-length frame-count bug.",
+      "failed": [
+        "recording_0_jfk/mel",
+        "recording_0_jfk/wav"
+      ],
+      "passed": false,
+      "limits": {
+        "log_mel_max_abs": 0.02,
+        "log_mel_rmse": 0.002,
+        "linear_mel_max_abs": 1e-05,
+        "direct_probabilities_max_abs": 0.005,
+        "wav_probabilities_max_abs": 0.005,
+        "f0_max_abs_hz": 0.25,
+        "uv_mismatch": 0
+      }
+    }
+  }
+}

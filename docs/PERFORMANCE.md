@@ -191,4 +191,6 @@ python scripts/benchmark.py --worker ort_cuda --profile-ort --warmup 0 --repeats
 
 下一步的可测方向是矩阵乘法 epilogue 融合 bias／激活、深度卷积＋SiLU、减少剩余布局拷贝，以及更低开销的前端任务复用／GPU FFT。CPU 网络仍慢于 ORT CPU，CPU GEMM／线程调度也有空间。短序列更多受提交、同步和框架成本影响；更低精度路径需单独给出误差与阈值边界，不能称为严格 F32。
 
-Metal 在 Windows 下仍未编译或实测，不能套用这里的显存策略或数字；已保留接入、源码精度检查点和 Mac 验证命令，见 [METAL.md](METAL.md)。原生 ggml CUDA 仍受 CUDA 12.8 与 MSVC 19.51 不兼容限制，没有使用 unsupported-compiler override；本文 CUDA 数据仅来自 PyTorch／ORT。当前结果不表示已经达到硬件上限。
+Metal 已在 Apple M4 完成独立适配及算子专项优化。三轮交替对照的 11 秒网络中位从原二进制 32.344 ms 降到 12.442 ms，约 **2.60 倍**；98 个网络计算节点全在 GPU，计算缓冲区为 17.741 MiB。另一轮宽长度测试中，60 秒 Metal 网络为 73.477 ms、MPS 为 84.889 ms；两轮运行状态不同，分别保留原始样本。15 组完整音频 F32 对照及 132 组原生消融通过；宽长度框架对比中 ORT CPU 的 30/60 秒概率门槛失败如实保留。实现、完整表和复现见 [METAL.md](METAL.md) 与 [专项归档](benchmarks/2026-09-06-macos-extreme/README.md)，[第一轮 macOS 归档](benchmarks/2026-09-06-macos/README.md) 保持不变。
+
+这是单独的平台实验，不能套用本文 Windows 显存策略或直接比较硬件速度。原生 ggml CUDA 仍受 CUDA 12.8 与 MSVC 19.51 不兼容限制，没有使用 unsupported-compiler override；本文 CUDA 数据仅来自 PyTorch／ORT。当前结果不表示已经达到硬件理论上限。
