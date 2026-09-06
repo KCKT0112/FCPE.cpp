@@ -1,0 +1,7 @@
+numpy>=1.24
+torch>=2.1
+gguf>=0.17
+# Only needed by validate.py to execute the original wheel:
+torchaudio>=2.1
+einops>=0.6
+local-attention==1.9.15

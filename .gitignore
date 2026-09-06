@@ -1,0 +1,9 @@
+/build*/
+/models/
+/references/
+/.python-deps/
+/.ort-deps/
+/third_party/ggml/
+/validation/
+__pycache__/
+*.pyc

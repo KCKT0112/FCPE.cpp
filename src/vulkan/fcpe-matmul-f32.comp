@@ -1,0 +1,65 @@
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. See LICENSE or https://mozilla.org/MPL/2.0/.
+
+#version 450
+#extension GL_EXT_control_flow_attributes : require
+
+// Full F32 operands and accumulation. One workgroup computes a 64 x 64 tile;
+// each invocation reuses shared tiles for 4 x 4 output values. No tensor cores
+// or implicit F16 conversion. A=[M,K], B=[N,K], D=[N,M] in row-major order.
+layout(local_size_x = 16, local_size_y = 16, local_size_z = 1) in;
+layout(binding = 0) readonly buffer A { float a[]; };
+layout(binding = 1) readonly buffer B { float b[]; };
+layout(binding = 2) writeonly buffer D { float d[]; };
+// Matches ggml v0.19.0 vk_mat_mat_push_constants. This specialization is
+// dispatched only for one batch, without split-K, with contiguous F32 tensors.
+layout(push_constant) uniform Parameters {
+    uint M; uint N; uint K;
+    uint stride_a; uint stride_b; uint stride_d;
+    uint batch_stride_a; uint batch_stride_b; uint batch_stride_d;
+    uint base_work_group_z; uint num_batches;
+    uint k_split;
+    uint ne02; uint ne12; uint broadcast2; uint broadcast3;
+    uint padded_N;
+} p;
+// The extra column avoids 16-way shared-memory bank conflicts while loading
+// contiguous K values into the transposed tiles.
+shared float tile_a[16][65];
+shared float tile_b[16][65];
+
+void main() {
+    uint lx = gl_LocalInvocationID.x;
+    uint ly = gl_LocalInvocationID.y;
+    uint tid = ly * 16 + lx;
+    uint m0 = gl_WorkGroupID.x * 64;
+    uint n0 = gl_WorkGroupID.y * 64;
+    vec4 accum[4];
+    [[unroll]] for (uint j = 0; j < 4; ++j) accum[j] = vec4(0.0);
+    for (uint k0 = 0; k0 < p.K; k0 += 16) {
+        [[unroll]] for (uint q = 0; q < 4; ++q) {
+            uint index = tid + q * 256;
+            uint row = index / 16;
+            uint kk = index % 16;
+            tile_a[kk][row] = m0 + row < p.M && k0 + kk < p.K
+                ? a[(m0 + row) * p.stride_a + k0 + kk] : 0.0;
+            tile_b[kk][row] = n0 + row < p.N && k0 + kk < p.K
+                ? b[(n0 + row) * p.stride_b + k0 + kk] : 0.0;
+        }
+        barrier();
+        [[unroll]] for (uint kk = 0; kk < 16; ++kk) {
+            vec4 av = vec4(tile_a[kk][lx], tile_a[kk][lx + 16],
+                           tile_a[kk][lx + 32], tile_a[kk][lx + 48]);
+            [[unroll]] for (uint j = 0; j < 4; ++j)
+                accum[j] = fma(av, vec4(tile_b[kk][ly + j * 16]), accum[j]);
+        }
+        barrier();
+    }
+    [[unroll]] for (uint j = 0; j < 4; ++j) {
+        uint n = n0 + ly + j * 16;
+        [[unroll]] for (uint i = 0; i < 4; ++i) {
+            uint m = m0 + lx + i * 16;
+            if (m < p.M && n < p.N) d[n * p.stride_d + m] = accum[j][i];
+        }
+    }
+}

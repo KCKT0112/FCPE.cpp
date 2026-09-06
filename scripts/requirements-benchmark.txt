@@ -1,0 +1,6 @@
+-r requirements.txt
+onnx==1.18.0
+soundfile>=0.12
+# For GPU comparison, install onnxruntime-gpu==1.22.0 in the benchmark
+# environment instead of this CPU package; do not install both in one directory.
+onnxruntime==1.22.0

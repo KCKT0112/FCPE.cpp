@@ -1,0 +1,3172 @@
+{
+  "extreme-cpu-f32": {
+    "model": "models\\fcpe-f32.gguf",
+    "model_sha256": "1c133c032e18c60a18cf7d87cad75dcef3ee438c67c0ac853513cd8045fdc7eb",
+    "torch": "2.7.1+cu118",
+    "backend": "cpu",
+    "type": "f32",
+    "cases": [
+      {
+        "name": "one_sample",
+        "sample_rate": 16000,
+        "samples": 1,
+        "frames": 1,
+        "torch_ms": 6.633199998759665,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.30385160446167e-08,
+            "rmse": 2.4303112040754817e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=1 load_ms=62.9382 mel_ms=0.1093 inference_ms=1.8368"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.30385160446167e-08,
+            "rmse": 2.4303112040754817e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=1 load_ms=63.2087 mel_ms=0.3308 inference_ms=1.747"
+        }
+      },
+      {
+        "name": "short",
+        "sample_rate": 16000,
+        "samples": 159,
+        "frames": 1,
+        "torch_ms": 4.107000000658445,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.30385160446167e-08,
+            "rmse": 2.4303112040754817e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=1 load_ms=60.7231 mel_ms=0.122 inference_ms=1.6576"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.30385160446167e-08,
+            "rmse": 2.4303112040754817e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=1 load_ms=58.2687 mel_ms=0.2949 inference_ms=2.4613"
+        }
+      },
+      {
+        "name": "hop_boundary",
+        "sample_rate": 16000,
+        "samples": 160,
+        "frames": 2,
+        "torch_ms": 13.603799990960397,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.1175870895385742e-08,
+            "rmse": 2.19900621625487e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=2 load_ms=63.4736 mel_ms=0.1267 inference_ms=1.7784"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.1175870895385742e-08,
+            "rmse": 2.19900621625487e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=2 load_ms=59.7057 mel_ms=0.298 inference_ms=2.0997"
+        }
+      },
+      {
+        "name": "pad_boundary",
+        "sample_rate": 16000,
+        "samples": 433,
+        "frames": 3,
+        "torch_ms": 13.24929999827873,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 4.598405212163925e-09,
+            "rmse": 8.72385073585713e-10
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=3 load_ms=61.3895 mel_ms=0.1059 inference_ms=2.6346"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 4.598405212163925e-09,
+            "rmse": 8.72385073585713e-10
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=3 load_ms=61.9138 mel_ms=0.2715 inference_ms=1.991"
+        }
+      },
+      {
+        "name": "silence",
+        "sample_rate": 16000,
+        "samples": 8000,
+        "frames": 51,
+        "torch_ms": 15.0294000050053,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.0436096431476471e-14,
+            "rmse": 8.801943111433901e-16
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=51 load_ms=62.99 mel_ms=0.1651 inference_ms=13.0423"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.0436096431476471e-14,
+            "rmse": 8.801943111433901e-16
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=51 load_ms=60.9317 mel_ms=0.68 inference_ms=14.3067"
+        }
+      },
+      {
+        "name": "harmonic_8000",
+        "sample_rate": 8000,
+        "samples": 6037,
+        "frames": 76,
+        "torch_ms": 20.032499989611097,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.5497207641601562e-06,
+            "rmse": 5.157174243351523e-08
+          },
+          "f0": {
+            "max_abs": 0.0001373291015625,
+            "rmse": 5.6336926614205075e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0001373291015625,
+            "rmse": 5.6336926614205075e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=63.6724 mel_ms=0.1658 inference_ms=17.9559"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.010869979858398438,
+            "rmse": 0.0006705608052854698
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 7.398690483393624e-08
+          },
+          "probabilities": {
+            "max_abs": 0.00020003318786621094,
+            "rmse": 4.694186896509362e-06
+          },
+          "f0": {
+            "max_abs": 0.0006866455078125,
+            "rmse": 0.00021705876201572882
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0006866455078125,
+            "rmse": 0.00021705876201572882
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=59.1417 mel_ms=2.8226 inference_ms=18.2403"
+        }
+      },
+      {
+        "name": "harmonic_16000",
+        "sample_rate": 16000,
+        "samples": 12037,
+        "frames": 76,
+        "torch_ms": 15.82060000509955,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.2516975402832031e-06,
+            "rmse": 5.0744997913199804e-08
+          },
+          "f0": {
+            "max_abs": 0.0001983642578125,
+            "rmse": 5.852402336299556e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0001983642578125,
+            "rmse": 5.852402336299556e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=62.3329 mel_ms=0.162 inference_ms=16.8182"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.012236595153808594,
+            "rmse": 0.0003773112065280141
+          },
+          "mel_magnitude": {
+            "max_abs": 2.384185791015625e-06,
+            "rmse": 7.105063439563367e-08
+          },
+          "probabilities": {
+            "max_abs": 0.00017881393432617188,
+            "rmse": 4.008775208259428e-06
+          },
+          "f0": {
+            "max_abs": 0.000701904296875,
+            "rmse": 0.00018688943284514818
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000701904296875,
+            "rmse": 0.00018688943284514818
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=61.431 mel_ms=1.0698 inference_ms=19.475"
+        }
+      },
+      {
+        "name": "harmonic_22050",
+        "sample_rate": 22050,
+        "samples": 16574,
+        "frames": 76,
+        "torch_ms": 15.716099995188415,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.5497207641601562e-06,
+            "rmse": 5.52472757191741e-08
+          },
+          "f0": {
+            "max_abs": 0.0001983642578125,
+            "rmse": 5.8811227522474375e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0001983642578125,
+            "rmse": 5.8811227522474375e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=60.1023 mel_ms=0.2986 inference_ms=17.341"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.011518478393554688,
+            "rmse": 0.0006737361959318189
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 6.725869687705279e-08
+          },
+          "probabilities": {
+            "max_abs": 0.00010943412780761719,
+            "rmse": 3.61817708310073e-06
+          },
+          "f0": {
+            "max_abs": 0.000396728515625,
+            "rmse": 0.00016781929924420522
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000396728515625,
+            "rmse": 0.00016781929924420522
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=60.8202 mel_ms=6.6982 inference_ms=16.2064"
+        }
+      },
+      {
+        "name": "harmonic_44100",
+        "sample_rate": 44100,
+        "samples": 33112,
+        "frames": 76,
+        "torch_ms": 16.186900000320747,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.7550926208496094e-06,
+            "rmse": 7.89707434375153e-08
+          },
+          "f0": {
+            "max_abs": 0.000244140625,
+            "rmse": 7.023057291622493e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000244140625,
+            "rmse": 7.023057291622493e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=61.8717 mel_ms=0.1572 inference_ms=16.1525"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.012226104736328125,
+            "rmse": 0.0010266120122702548
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 8.08316705637075e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0003813505172729492,
+            "rmse": 8.758952770084785e-06
+          },
+          "f0": {
+            "max_abs": 0.001312255859375,
+            "rmse": 0.00036623603333264896
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.001312255859375,
+            "rmse": 0.00036623603333264896
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=58.968 mel_ms=8.9005 inference_ms=18.5127"
+        }
+      },
+      {
+        "name": "harmonic_48000",
+        "sample_rate": 48000,
+        "samples": 36037,
+        "frames": 76,
+        "torch_ms": 15.602100000251085,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.8477439880371094e-06,
+            "rmse": 5.6557197564981334e-08
+          },
+          "f0": {
+            "max_abs": 0.0002288818359375,
+            "rmse": 5.841923541257293e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0002288818359375,
+            "rmse": 5.841923541257293e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=59.5941 mel_ms=0.183 inference_ms=18.7924"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.013685226440429688,
+            "rmse": 0.0010364147819030272
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 7.622960318061051e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0003235340118408203,
+            "rmse": 9.645182761263563e-06
+          },
+          "f0": {
+            "max_abs": 0.001068115234375,
+            "rmse": 0.0004048084525759242
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.001068115234375,
+            "rmse": 0.0004048084525759242
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=60.9636 mel_ms=7.2131 inference_ms=19.4355"
+        }
+      },
+      {
+        "name": "noise",
+        "sample_rate": 16000,
+        "samples": 8147,
+        "frames": 51,
+        "torch_ms": 14.987500006100163,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 9.080395102500916e-09,
+            "rmse": 1.0020744319116168e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=51 load_ms=72.1779 mel_ms=0.1318 inference_ms=15.9486"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 9.5367431640625e-07,
+            "rmse": 1.4465282110054774e-07
+          },
+          "mel_magnitude": {
+            "max_abs": 2.9802322387695312e-08,
+            "rmse": 4.707904093784278e-09
+          },
+          "probabilities": {
+            "max_abs": 1.0710209608078003e-08,
+            "rmse": 1.4282335690427813e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=51 load_ms=66.4095 mel_ms=0.7047 inference_ms=13.4218"
+        }
+      },
+      {
+        "name": "voiced_unvoiced",
+        "sample_rate": 16000,
+        "samples": 48037,
+        "frames": 301,
+        "torch_ms": 54.29260000528302,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.1026859283447266e-06,
+            "rmse": 1.709111513578959e-08
+          },
+          "f0": {
+            "max_abs": 0.000274658203125,
+            "rmse": 5.5079579529058943e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000274658203125,
+            "rmse": 7.700403870376805e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=301 load_ms=64.9821 mel_ms=0.4499 inference_ms=79.6207"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.008593559265136719,
+            "rmse": 0.0003937733826415891
+          },
+          "mel_magnitude": {
+            "max_abs": 9.5367431640625e-07,
+            "rmse": 3.1621420893594815e-08
+          },
+          "probabilities": {
+            "max_abs": 5.123019218444824e-05,
+            "rmse": 1.3830772822279172e-06
+          },
+          "f0": {
+            "max_abs": 0.0003509521484375,
+            "rmse": 9.733905796937977e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0003509521484375,
+            "rmse": 0.00013608492750580924
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=301 load_ms=63.4573 mel_ms=1.8234 inference_ms=69.3486"
+        }
+      },
+      {
+        "name": "stereo",
+        "sample_rate": 16000,
+        "samples": 12000,
+        "frames": 76,
+        "torch_ms": 18.286399994394742,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.1920928955078125e-06,
+            "rmse": 2.5981034422172415e-08
+          },
+          "f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 4.403673667233617e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 7.38822379879453e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=65.5859 mel_ms=0.1802 inference_ms=20.1855"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.002666473388671875,
+            "rmse": 9.139511478289599e-05
+          },
+          "mel_magnitude": {
+            "max_abs": 7.152557373046875e-07,
+            "rmse": 2.0336693806051584e-08
+          },
+          "probabilities": {
+            "max_abs": 2.8640031814575195e-05,
+            "rmse": 5.157200071987431e-07
+          },
+          "f0": {
+            "max_abs": 0.000244140625,
+            "rmse": 5.96902132692148e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000244140625,
+            "rmse": 0.0001001447172419051
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=71.364 mel_ms=1.0229 inference_ms=19.2179"
+        }
+      },
+      {
+        "name": "recording_0_jfk",
+        "sample_rate": 16000,
+        "samples": 176000,
+        "frames": 1101,
+        "torch_ms": 168.78880000149366,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.2814998626708984e-06,
+            "rmse": 2.7604638621627923e-08
+          },
+          "f0": {
+            "max_abs": 0.00030517578125,
+            "rmse": 6.160311583014199e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.00030517578125,
+            "rmse": 7.027666713139574e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=1101 load_ms=60.6245 mel_ms=0.7879 inference_ms=241.829"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0030927658081054688,
+            "rmse": 5.4490454915557916e-05
+          },
+          "mel_magnitude": {
+            "max_abs": 1.430511474609375e-06,
+            "rmse": 2.4765539810612546e-08
+          },
+          "probabilities": {
+            "max_abs": 8.940696716308594e-06,
+            "rmse": 9.314722737624236e-08
+          },
+          "f0": {
+            "max_abs": 0.00030517578125,
+            "rmse": 6.604108138890003e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.00030517578125,
+            "rmse": 7.533948618057172e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=1101 load_ms=60.6044 mel_ms=4.6536 inference_ms=226.115"
+        }
+      }
+    ],
+    "note": "Non-16k input is resampled before the original Wav2Mel call to correct the wheel's original-length frame-count bug.",
+    "failed": [],
+    "passed": true,
+    "limits": {
+      "log_mel_max_abs": 0.02,
+      "log_mel_rmse": 0.002,
+      "linear_mel_max_abs": 1e-05,
+      "direct_probabilities_max_abs": 1e-05,
+      "wav_probabilities_max_abs": 0.0005,
+      "f0_max_abs_hz": 0.02,
+      "uv_mismatch": 0
+    }
+  },
+  "extreme-cpu-f16": {
+    "model": "models\\fcpe-f16.gguf",
+    "model_sha256": "482748f7505b099b21e69694442f20c086342f5e684b9d34af64338f6fa10a7b",
+    "torch": "2.7.1+cu118",
+    "backend": "cpu",
+    "type": "f16",
+    "cases": [
+      {
+        "name": "one_sample",
+        "sample_rate": 16000,
+        "samples": 1,
+        "frames": 1,
+        "torch_ms": 7.377100002486259,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.3760443329811096e-06,
+            "rmse": 6.117034450665919e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=1 load_ms=34.981 mel_ms=0.1241 inference_ms=4.4449"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.3760443329811096e-06,
+            "rmse": 6.117034450665919e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=1 load_ms=35.4558 mel_ms=0.2973 inference_ms=4.4986"
+        }
+      },
+      {
+        "name": "short",
+        "sample_rate": 16000,
+        "samples": 159,
+        "frames": 1,
+        "torch_ms": 4.8940999986371025,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.3760443329811096e-06,
+            "rmse": 6.117034450665919e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=1 load_ms=35.4068 mel_ms=0.1288 inference_ms=4.6103"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.3760443329811096e-06,
+            "rmse": 6.117034450665919e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=1 load_ms=33.6973 mel_ms=0.3061 inference_ms=5.2075"
+        }
+      },
+      {
+        "name": "hop_boundary",
+        "sample_rate": 16000,
+        "samples": 160,
+        "frames": 2,
+        "torch_ms": 13.59000000229571,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.217952325940132e-06,
+            "rmse": 4.766147068836164e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=2 load_ms=36.317 mel_ms=0.1352 inference_ms=5.2583"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.217952325940132e-06,
+            "rmse": 4.766147068836164e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=2 load_ms=35.8043 mel_ms=0.2987 inference_ms=4.7306"
+        }
+      },
+      {
+        "name": "pad_boundary",
+        "sample_rate": 16000,
+        "samples": 433,
+        "frames": 3,
+        "torch_ms": 14.32409998960793,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 8.650822564959526e-07,
+            "rmse": 9.620332901799144e-08
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=3 load_ms=35.3529 mel_ms=0.1451 inference_ms=5.0531"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 8.650822564959526e-07,
+            "rmse": 9.620332901799144e-08
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=3 load_ms=43.6469 mel_ms=0.3239 inference_ms=5.2725"
+        }
+      },
+      {
+        "name": "silence",
+        "sample_rate": 16000,
+        "samples": 8000,
+        "frames": 51,
+        "torch_ms": 18.719699990469962,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.860023412016744e-12,
+            "rmse": 2.941750433028694e-13
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=51 load_ms=36.8301 mel_ms=0.1434 inference_ms=20.2749"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.860023412016744e-12,
+            "rmse": 2.941750433028694e-13
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=51 load_ms=35.2242 mel_ms=0.7058 inference_ms=18.5653"
+        }
+      },
+      {
+        "name": "harmonic_8000",
+        "sample_rate": 8000,
+        "samples": 6037,
+        "frames": 76,
+        "torch_ms": 22.71019999170676,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0007183551788330078,
+            "rmse": 2.6933999242292535e-05
+          },
+          "f0": {
+            "max_abs": 0.0027618408203125,
+            "rmse": 0.0013513473850771721
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0027618408203125,
+            "rmse": 0.0013513473850771721
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=39.7575 mel_ms=0.1985 inference_ms=26.8543"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.010869979858398438,
+            "rmse": 0.0006705608052854698
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 7.398690483393624e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0007078051567077637,
+            "rmse": 2.6930024319490735e-05
+          },
+          "f0": {
+            "max_abs": 0.0027618408203125,
+            "rmse": 0.0013240149603543354
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0027618408203125,
+            "rmse": 0.0013240149603543354
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=35.3179 mel_ms=2.9884 inference_ms=20.4523"
+        }
+      },
+      {
+        "name": "harmonic_16000",
+        "sample_rate": 16000,
+        "samples": 12037,
+        "frames": 76,
+        "torch_ms": 22.137799998745322,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0007175803184509277,
+            "rmse": 2.6970825535211498e-05
+          },
+          "f0": {
+            "max_abs": 0.0028228759765625,
+            "rmse": 0.0013483845138242134
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0028228759765625,
+            "rmse": 0.0013483845138242134
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=48.4746 mel_ms=0.1733 inference_ms=27.4267"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.012236595153808594,
+            "rmse": 0.0003773112065280141
+          },
+          "mel_magnitude": {
+            "max_abs": 2.384185791015625e-06,
+            "rmse": 7.105063439563367e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0007119178771972656,
+            "rmse": 2.75744054556272e-05
+          },
+          "f0": {
+            "max_abs": 0.0027923583984375,
+            "rmse": 0.0013750689413814766
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0027923583984375,
+            "rmse": 0.0013750689413814766
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=39.2297 mel_ms=0.9241 inference_ms=26.5265"
+        }
+      },
+      {
+        "name": "harmonic_22050",
+        "sample_rate": 22050,
+        "samples": 16574,
+        "frames": 76,
+        "torch_ms": 21.987300002365373,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0007184743881225586,
+            "rmse": 2.699824067068729e-05
+          },
+          "f0": {
+            "max_abs": 0.0028533935546875,
+            "rmse": 0.0013328268264008302
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0028533935546875,
+            "rmse": 0.0013328268264008302
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=40.281 mel_ms=0.1874 inference_ms=27.2521"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.011518478393554688,
+            "rmse": 0.0006737361959318189
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 6.725869687705279e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0006968379020690918,
+            "rmse": 2.7722094123477638e-05
+          },
+          "f0": {
+            "max_abs": 0.0027008056640625,
+            "rmse": 0.0013844831496576566
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0027008056640625,
+            "rmse": 0.0013844831496576566
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=41.6866 mel_ms=8.2058 inference_ms=25.1936"
+        }
+      },
+      {
+        "name": "harmonic_44100",
+        "sample_rate": 44100,
+        "samples": 33112,
+        "frames": 76,
+        "torch_ms": 23.913199998787604,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0007149577140808105,
+            "rmse": 2.6896114905472078e-05
+          },
+          "f0": {
+            "max_abs": 0.0028839111328125,
+            "rmse": 0.0013158787893894418
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0028839111328125,
+            "rmse": 0.0013158787893894418
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=35.2129 mel_ms=0.1918 inference_ms=23.0684"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.012226104736328125,
+            "rmse": 0.0010266120122702548
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 8.08316705637075e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0007999539375305176,
+            "rmse": 2.9658607762336026e-05
+          },
+          "f0": {
+            "max_abs": 0.003326416015625,
+            "rmse": 0.0014214681579171923
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.003326416015625,
+            "rmse": 0.0014214681579171923
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=50.1505 mel_ms=9.5769 inference_ms=27.2269"
+        }
+      },
+      {
+        "name": "harmonic_48000",
+        "sample_rate": 48000,
+        "samples": 36037,
+        "frames": 76,
+        "torch_ms": 22.318399991490878,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0007150769233703613,
+            "rmse": 2.6913067345517825e-05
+          },
+          "f0": {
+            "max_abs": 0.0027008056640625,
+            "rmse": 0.0013188995868164733
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0027008056640625,
+            "rmse": 0.0013188995868164733
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=40.0858 mel_ms=0.2189 inference_ms=23.0232"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.013685226440429688,
+            "rmse": 0.0010364147819030272
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 7.622960318061051e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0007077455520629883,
+            "rmse": 2.972308518349845e-05
+          },
+          "f0": {
+            "max_abs": 0.00274658203125,
+            "rmse": 0.0014219217570583464
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.00274658203125,
+            "rmse": 0.0014219217570583464
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=37.1193 mel_ms=7.4012 inference_ms=23.8656"
+        }
+      },
+      {
+        "name": "noise",
+        "sample_rate": 16000,
+        "samples": 8147,
+        "frames": 51,
+        "torch_ms": 15.539200001512654,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 2.2603198885917664e-06,
+            "rmse": 3.5315624995747664e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=51 load_ms=37.3162 mel_ms=0.1493 inference_ms=17.0961"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 9.5367431640625e-07,
+            "rmse": 1.4465282110054774e-07
+          },
+          "mel_magnitude": {
+            "max_abs": 2.9802322387695312e-08,
+            "rmse": 4.707904093784278e-09
+          },
+          "probabilities": {
+            "max_abs": 2.2603198885917664e-06,
+            "rmse": 3.529481318492838e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=51 load_ms=34.1785 mel_ms=0.6847 inference_ms=17.8283"
+        }
+      },
+      {
+        "name": "voiced_unvoiced",
+        "sample_rate": 16000,
+        "samples": 48037,
+        "frames": 301,
+        "torch_ms": 61.39219999022316,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0002512335777282715,
+            "rmse": 6.963589866065898e-06
+          },
+          "f0": {
+            "max_abs": 0.002410888671875,
+            "rmse": 0.0005220138769545607
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.002410888671875,
+            "rmse": 0.0007298018091025138
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=301 load_ms=41.1778 mel_ms=0.3707 inference_ms=86.3168"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.008593559265136719,
+            "rmse": 0.0003937733826415891
+          },
+          "mel_magnitude": {
+            "max_abs": 9.5367431640625e-07,
+            "rmse": 3.1621420893594815e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0002453327178955078,
+            "rmse": 7.609667743186063e-06
+          },
+          "f0": {
+            "max_abs": 0.002532958984375,
+            "rmse": 0.0005704382313956026
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.002532958984375,
+            "rmse": 0.0007975015064398126
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=301 load_ms=35.0616 mel_ms=2.3471 inference_ms=81.511"
+        }
+      },
+      {
+        "name": "stereo",
+        "sample_rate": 16000,
+        "samples": 12000,
+        "frames": 76,
+        "torch_ms": 22.701099995174445,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0002778172492980957,
+            "rmse": 8.322343923740355e-06
+          },
+          "f0": {
+            "max_abs": 0.002166748046875,
+            "rmse": 0.0005699057999134126
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.002166748046875,
+            "rmse": 0.0009561543184548455
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=38.6113 mel_ms=0.1829 inference_ms=27.5548"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.002666473388671875,
+            "rmse": 9.139511478289599e-05
+          },
+          "mel_magnitude": {
+            "max_abs": 7.152557373046875e-07,
+            "rmse": 2.0336693806051584e-08
+          },
+          "probabilities": {
+            "max_abs": 0.00028480589389801025,
+            "rmse": 8.44045150036815e-06
+          },
+          "f0": {
+            "max_abs": 0.0023193359375,
+            "rmse": 0.0005760598392778118
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0023193359375,
+            "rmse": 0.0009664792025235905
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "backend=CPU frames=76 load_ms=37.0645 mel_ms=0.987 inference_ms=25.4028"
+        }
+      },
+      {
+        "name": "recording_0_jfk",
+        "sample_rate": 16000,
+        "samples": 176000,
+        "frames": 1101,
+        "torch_ms": 154.04740000667516,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0019604265689849854,
+            "rmse": 2.7315255781930194e-05
+          },
+          "f0": {
+            "max_abs": 199.21311950683594,
+            "rmse": 6.003773304103407
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.006378173828125,
+            "rmse": 0.001369204263332093
+          },
+          "uv_mismatch": 1,
+          "uv_mismatch_details": [
+            {
+              "frame": 885,
+              "reference_confidence": 0.00598903838545084,
+              "cpp_confidence": 0.006002659909427166,
+              "reference_f0": 0.0,
+              "cpp_f0": 199.21311950683594
+            }
+          ],
+          "timing": "backend=CPU frames=1101 load_ms=39.6863 mel_ms=1.1598 inference_ms=272.067"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0030927658081054688,
+            "rmse": 5.4490454915557916e-05
+          },
+          "mel_magnitude": {
+            "max_abs": 1.430511474609375e-06,
+            "rmse": 2.4765539810612546e-08
+          },
+          "probabilities": {
+            "max_abs": 0.001961439847946167,
+            "rmse": 2.7318382522746624e-05
+          },
+          "f0": {
+            "max_abs": 199.21307373046875,
+            "rmse": 6.003771925142998
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.006378173828125,
+            "rmse": 0.0013727492846400918
+          },
+          "uv_mismatch": 1,
+          "uv_mismatch_details": [
+            {
+              "frame": 885,
+              "reference_confidence": 0.00598903838545084,
+              "cpp_confidence": 0.006002657115459442,
+              "reference_f0": 0.0,
+              "cpp_f0": 199.21307373046875
+            }
+          ],
+          "timing": "backend=CPU frames=1101 load_ms=36.5786 mel_ms=5.2378 inference_ms=247.204"
+        }
+      }
+    ],
+    "note": "Non-16k input is resampled before the original Wav2Mel call to correct the wheel's original-length frame-count bug.",
+    "failed": [
+      "recording_0_jfk/mel",
+      "recording_0_jfk/wav"
+    ],
+    "passed": false,
+    "limits": {
+      "log_mel_max_abs": 0.02,
+      "log_mel_rmse": 0.002,
+      "linear_mel_max_abs": 1e-05,
+      "direct_probabilities_max_abs": 0.005,
+      "wav_probabilities_max_abs": 0.005,
+      "f0_max_abs_hz": 0.25,
+      "uv_mismatch": 0
+    }
+  },
+  "extreme-vulkan-f32": {
+    "model": "models\\fcpe-f32.gguf",
+    "model_sha256": "1c133c032e18c60a18cf7d87cad75dcef3ee438c67c0ac853513cd8045fdc7eb",
+    "torch": "2.7.1+cu118",
+    "backend": "Vulkan0",
+    "type": "f32",
+    "cases": [
+      {
+        "name": "one_sample",
+        "sample_rate": 16000,
+        "samples": 1,
+        "frames": 1,
+        "torch_ms": 7.370699997409247,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 2.1420419216156006e-08,
+            "rmse": 4.400665937756787e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1 load_ms=346.108 mel_ms=0.1033 inference_ms=430.64"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 2.1420419216156006e-08,
+            "rmse": 4.400665937756787e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1 load_ms=309.437 mel_ms=0.3279 inference_ms=428.847"
+        }
+      },
+      {
+        "name": "short",
+        "sample_rate": 16000,
+        "samples": 159,
+        "frames": 1,
+        "torch_ms": 4.4347999937599525,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 2.1420419216156006e-08,
+            "rmse": 4.400665937756787e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1 load_ms=321.693 mel_ms=0.1789 inference_ms=423.884"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 2.1420419216156006e-08,
+            "rmse": 4.400665937756787e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1 load_ms=316.564 mel_ms=0.3252 inference_ms=434.892"
+        }
+      },
+      {
+        "name": "hop_boundary",
+        "sample_rate": 16000,
+        "samples": 160,
+        "frames": 2,
+        "torch_ms": 13.724999997066334,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.4435499906539917e-08,
+            "rmse": 2.5830594223853638e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=2 load_ms=324.949 mel_ms=0.1022 inference_ms=640.434"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.4435499906539917e-08,
+            "rmse": 2.5830594223853638e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=2 load_ms=319.619 mel_ms=0.3186 inference_ms=615.731"
+        }
+      },
+      {
+        "name": "pad_boundary",
+        "sample_rate": 16000,
+        "samples": 433,
+        "frames": 3,
+        "torch_ms": 13.746600001468323,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 4.71482053399086e-09,
+            "rmse": 8.762762156567593e-10
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=3 load_ms=320.83 mel_ms=0.1016 inference_ms=717.16"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 4.71482053399086e-09,
+            "rmse": 8.762762156567593e-10
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=3 load_ms=311.541 mel_ms=0.2886 inference_ms=710.285"
+        }
+      },
+      {
+        "name": "silence",
+        "sample_rate": 16000,
+        "samples": 8000,
+        "frames": 51,
+        "torch_ms": 16.93719999457244,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.141931159689193e-14,
+            "rmse": 2.120070652075126e-15
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=51 load_ms=357.961 mel_ms=0.1345 inference_ms=441.7"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.141931159689193e-14,
+            "rmse": 2.120070652075126e-15
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=51 load_ms=436.166 mel_ms=0.7087 inference_ms=366.148"
+        }
+      },
+      {
+        "name": "harmonic_8000",
+        "sample_rate": 8000,
+        "samples": 6037,
+        "frames": 76,
+        "torch_ms": 19.130100001348183,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.7285346984863281e-06,
+            "rmse": 5.744429346090521e-08
+          },
+          "f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 5.904517366056794e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 5.904517366056794e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=324.005 mel_ms=0.1805 inference_ms=353.897"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.010869979858398438,
+            "rmse": 0.0006705608052854698
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 7.398690483393624e-08
+          },
+          "probabilities": {
+            "max_abs": 0.00020170211791992188,
+            "rmse": 4.7056811059867935e-06
+          },
+          "f0": {
+            "max_abs": 0.0006866455078125,
+            "rmse": 0.000215358425662036
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0006866455078125,
+            "rmse": 0.000215358425662036
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=324.121 mel_ms=3.8883 inference_ms=334.514"
+        }
+      },
+      {
+        "name": "harmonic_16000",
+        "sample_rate": 16000,
+        "samples": 12037,
+        "frames": 76,
+        "torch_ms": 15.696699992986396,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.1920928955078125e-06,
+            "rmse": 5.563209130328981e-08
+          },
+          "f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 5.3434435955295834e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 5.3434435955295834e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=323.526 mel_ms=0.1699 inference_ms=348.779"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.012236595153808594,
+            "rmse": 0.0003773112065280141
+          },
+          "mel_magnitude": {
+            "max_abs": 2.384185791015625e-06,
+            "rmse": 7.105063439563367e-08
+          },
+          "probabilities": {
+            "max_abs": 0.00017982721328735352,
+            "rmse": 4.032746590988655e-06
+          },
+          "f0": {
+            "max_abs": 0.000732421875,
+            "rmse": 0.00019155226781009257
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000732421875,
+            "rmse": 0.00019155226781009257
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=324.135 mel_ms=1.2775 inference_ms=366.951"
+        }
+      },
+      {
+        "name": "harmonic_22050",
+        "sample_rate": 22050,
+        "samples": 16574,
+        "frames": 76,
+        "torch_ms": 17.080299992812797,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 2.0563602447509766e-06,
+            "rmse": 6.539797407558692e-08
+          },
+          "f0": {
+            "max_abs": 0.0001373291015625,
+            "rmse": 5.515538208555761e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0001373291015625,
+            "rmse": 5.515538208555761e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=316.796 mel_ms=0.1455 inference_ms=337.13"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.011518478393554688,
+            "rmse": 0.0006737361959318189
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 6.725869687705279e-08
+          },
+          "probabilities": {
+            "max_abs": 0.00010916590690612793,
+            "rmse": 3.6219130736344246e-06
+          },
+          "f0": {
+            "max_abs": 0.000396728515625,
+            "rmse": 0.0001597481266522534
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000396728515625,
+            "rmse": 0.0001597481266522534
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=303.368 mel_ms=6.306 inference_ms=350.172"
+        }
+      },
+      {
+        "name": "harmonic_44100",
+        "sample_rate": 44100,
+        "samples": 33112,
+        "frames": 76,
+        "torch_ms": 17.624799991608597,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 2.9206275939941406e-06,
+            "rmse": 6.33379096055779e-08
+          },
+          "f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 6.70848064537809e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 6.70848064537809e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=312.511 mel_ms=0.1902 inference_ms=343.775"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.012226104736328125,
+            "rmse": 0.0010266120122702548
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 8.08316705637075e-08
+          },
+          "probabilities": {
+            "max_abs": 0.00038164854049682617,
+            "rmse": 8.772278368147728e-06
+          },
+          "f0": {
+            "max_abs": 0.001312255859375,
+            "rmse": 0.0003742989616556726
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.001312255859375,
+            "rmse": 0.0003742989616556726
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=311.638 mel_ms=8.567 inference_ms=334.055"
+        }
+      },
+      {
+        "name": "harmonic_48000",
+        "sample_rate": 48000,
+        "samples": 36037,
+        "frames": 76,
+        "torch_ms": 18.133699995814823,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.3113021850585938e-06,
+            "rmse": 5.5103599128076003e-08
+          },
+          "f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 5.620081400505498e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 5.620081400505498e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=320.543 mel_ms=0.1453 inference_ms=336.895"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.013685226440429688,
+            "rmse": 0.0010364147819030272
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 7.622960318061051e-08
+          },
+          "probabilities": {
+            "max_abs": 0.00032466650009155273,
+            "rmse": 9.667842863932221e-06
+          },
+          "f0": {
+            "max_abs": 0.001129150390625,
+            "rmse": 0.0004081472753947309
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.001129150390625,
+            "rmse": 0.0004081472753947309
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=308.261 mel_ms=7.2794 inference_ms=342.751"
+        }
+      },
+      {
+        "name": "noise",
+        "sample_rate": 16000,
+        "samples": 8147,
+        "frames": 51,
+        "torch_ms": 13.861699990229681,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 2.2817403078079224e-08,
+            "rmse": 2.108810794764415e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=51 load_ms=305.863 mel_ms=0.1504 inference_ms=338.117"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 9.5367431640625e-07,
+            "rmse": 1.4465282110054774e-07
+          },
+          "mel_magnitude": {
+            "max_abs": 2.9802322387695312e-08,
+            "rmse": 4.707904093784278e-09
+          },
+          "probabilities": {
+            "max_abs": 2.0489096641540527e-08,
+            "rmse": 2.117737120375316e-09
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=51 load_ms=310.007 mel_ms=0.9316 inference_ms=350.867"
+        }
+      },
+      {
+        "name": "voiced_unvoiced",
+        "sample_rate": 16000,
+        "samples": 48037,
+        "frames": 301,
+        "torch_ms": 47.09279999951832,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.430511474609375e-06,
+            "rmse": 3.079662295336357e-08
+          },
+          "f0": {
+            "max_abs": 0.0002288818359375,
+            "rmse": 5.540164413462039e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0002288818359375,
+            "rmse": 7.745430131586158e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=301 load_ms=319.701 mel_ms=0.3286 inference_ms=505.331"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.008593559265136719,
+            "rmse": 0.0003937733826415891
+          },
+          "mel_magnitude": {
+            "max_abs": 9.5367431640625e-07,
+            "rmse": 3.1621420893594815e-08
+          },
+          "probabilities": {
+            "max_abs": 5.08725643157959e-05,
+            "rmse": 1.3997696852070438e-06
+          },
+          "f0": {
+            "max_abs": 0.00030517578125,
+            "rmse": 0.00010028251120526657
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.00030517578125,
+            "rmse": 0.00014020002404134793
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=301 load_ms=317.339 mel_ms=2.4092 inference_ms=525.986"
+        }
+      },
+      {
+        "name": "stereo",
+        "sample_rate": 16000,
+        "samples": 12000,
+        "frames": 76,
+        "torch_ms": 18.41999999305699,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.1920928955078125e-06,
+            "rmse": 4.019597018477319e-08
+          },
+          "f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 4.4175654167782426e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000152587890625,
+            "rmse": 7.411530556367456e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=330.765 mel_ms=0.16 inference_ms=349.07"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.002666473388671875,
+            "rmse": 9.139511478289599e-05
+          },
+          "mel_magnitude": {
+            "max_abs": 7.152557373046875e-07,
+            "rmse": 2.0336693806051584e-08
+          },
+          "probabilities": {
+            "max_abs": 3.0934810638427734e-05,
+            "rmse": 5.356444442286613e-07
+          },
+          "f0": {
+            "max_abs": 0.000244140625,
+            "rmse": 6.41194120150148e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.000244140625,
+            "rmse": 0.0001075757655111715
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=332.087 mel_ms=0.9533 inference_ms=348.213"
+        }
+      },
+      {
+        "name": "recording_0_jfk",
+        "sample_rate": 16000,
+        "samples": 176000,
+        "frames": 1101,
+        "torch_ms": 154.17989999696147,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 1.385807991027832e-06,
+            "rmse": 2.581072584258087e-08
+          },
+          "f0": {
+            "max_abs": 0.00030517578125,
+            "rmse": 6.453614567774872e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.00030517578125,
+            "rmse": 7.362265961098154e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1101 load_ms=319.668 mel_ms=0.9487 inference_ms=505.484"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0030927658081054688,
+            "rmse": 5.4490454915557916e-05
+          },
+          "mel_magnitude": {
+            "max_abs": 1.430511474609375e-06,
+            "rmse": 2.4765539810612546e-08
+          },
+          "probabilities": {
+            "max_abs": 7.4803829193115234e-06,
+            "rmse": 9.318028973661309e-08
+          },
+          "f0": {
+            "max_abs": 0.00030517578125,
+            "rmse": 6.574602666130728e-05
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.00030517578125,
+            "rmse": 7.50028885491507e-05
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1101 load_ms=316.386 mel_ms=5.7388 inference_ms=506.856"
+        }
+      }
+    ],
+    "note": "Non-16k input is resampled before the original Wav2Mel call to correct the wheel's original-length frame-count bug.",
+    "failed": [],
+    "passed": true,
+    "limits": {
+      "log_mel_max_abs": 0.02,
+      "log_mel_rmse": 0.002,
+      "linear_mel_max_abs": 1e-05,
+      "direct_probabilities_max_abs": 1e-05,
+      "wav_probabilities_max_abs": 0.0005,
+      "f0_max_abs_hz": 0.02,
+      "uv_mismatch": 0
+    }
+  },
+  "extreme-vulkan-f16": {
+    "model": "models\\fcpe-f16.gguf",
+    "model_sha256": "482748f7505b099b21e69694442f20c086342f5e684b9d34af64338f6fa10a7b",
+    "torch": "2.7.1+cu118",
+    "backend": "Vulkan0",
+    "type": "f16",
+    "cases": [
+      {
+        "name": "one_sample",
+        "sample_rate": 16000,
+        "samples": 1,
+        "frames": 1,
+        "torch_ms": 7.099499998730607,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.3848918974399567e-06,
+            "rmse": 6.126111543532724e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1 load_ms=296.418 mel_ms=0.1339 inference_ms=460.148"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.3848918974399567e-06,
+            "rmse": 6.126111543532724e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1 load_ms=283.859 mel_ms=0.3366 inference_ms=433.28"
+        }
+      },
+      {
+        "name": "short",
+        "sample_rate": 16000,
+        "samples": 159,
+        "frames": 1,
+        "torch_ms": 4.571199999190867,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.3848918974399567e-06,
+            "rmse": 6.126111543532724e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1 load_ms=277.488 mel_ms=0.1201 inference_ms=452.354"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.3848918974399567e-06,
+            "rmse": 6.126111543532724e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1 load_ms=281.995 mel_ms=0.4127 inference_ms=446.356"
+        }
+      },
+      {
+        "name": "hop_boundary",
+        "sample_rate": 16000,
+        "samples": 160,
+        "frames": 2,
+        "torch_ms": 14.437299993005581,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.210734575986862e-06,
+            "rmse": 4.755439465066244e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=2 load_ms=293.447 mel_ms=0.1092 inference_ms=618.391"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.210734575986862e-06,
+            "rmse": 4.755439465066244e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=2 load_ms=284.459 mel_ms=0.3214 inference_ms=619.869"
+        }
+      },
+      {
+        "name": "pad_boundary",
+        "sample_rate": 16000,
+        "samples": 433,
+        "frames": 3,
+        "torch_ms": 13.253500001155771,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 8.648494258522987e-07,
+            "rmse": 9.626921149576317e-08
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=3 load_ms=279.089 mel_ms=0.1159 inference_ms=719.162"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 8.648494258522987e-07,
+            "rmse": 9.626921149576317e-08
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=3 load_ms=288.728 mel_ms=0.3367 inference_ms=719.971"
+        }
+      },
+      {
+        "name": "silence",
+        "sample_rate": 16000,
+        "samples": 8000,
+        "frames": 51,
+        "torch_ms": 16.778000004705973,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.865796571744795e-12,
+            "rmse": 2.9437939592378345e-13
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=51 load_ms=286.926 mel_ms=0.154 inference_ms=372.758"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 3.865796571744795e-12,
+            "rmse": 2.9437939592378345e-13
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=51 load_ms=289.741 mel_ms=0.6893 inference_ms=365.341"
+        }
+      },
+      {
+        "name": "harmonic_8000",
+        "sample_rate": 8000,
+        "samples": 6037,
+        "frames": 76,
+        "torch_ms": 24.449100004858337,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0007190108299255371,
+            "rmse": 2.6939295586382093e-05
+          },
+          "f0": {
+            "max_abs": 0.0027618408203125,
+            "rmse": 0.0013476243077150938
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0027618408203125,
+            "rmse": 0.0013476243077150938
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=284.973 mel_ms=0.1483 inference_ms=369.308"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.010869979858398438,
+            "rmse": 0.0006705608052854698
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 7.398690483393624e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0007071495056152344,
+            "rmse": 2.6930393625858275e-05
+          },
+          "f0": {
+            "max_abs": 0.0027618408203125,
+            "rmse": 0.0013352794148360197
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0027618408203125,
+            "rmse": 0.0013352794148360197
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=295.183 mel_ms=3.6699 inference_ms=369.452"
+        }
+      },
+      {
+        "name": "harmonic_16000",
+        "sample_rate": 16000,
+        "samples": 12037,
+        "frames": 76,
+        "torch_ms": 16.30069999373518,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0007178783416748047,
+            "rmse": 2.697266209825787e-05
+          },
+          "f0": {
+            "max_abs": 0.00274658203125,
+            "rmse": 0.001341902756288892
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.00274658203125,
+            "rmse": 0.001341902756288892
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=281.031 mel_ms=0.1971 inference_ms=351.918"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.012236595153808594,
+            "rmse": 0.0003773112065280141
+          },
+          "mel_magnitude": {
+            "max_abs": 2.384185791015625e-06,
+            "rmse": 7.105063439563367e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0007116198539733887,
+            "rmse": 2.757424262897502e-05
+          },
+          "f0": {
+            "max_abs": 0.00274658203125,
+            "rmse": 0.0013775886526405403
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.00274658203125,
+            "rmse": 0.0013775886526405403
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=284.72 mel_ms=1.2994 inference_ms=340.39"
+        }
+      },
+      {
+        "name": "harmonic_22050",
+        "sample_rate": 22050,
+        "samples": 16574,
+        "frames": 76,
+        "torch_ms": 15.5088000028627,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0007184743881225586,
+            "rmse": 2.698099099475099e-05
+          },
+          "f0": {
+            "max_abs": 0.0027923583984375,
+            "rmse": 0.0013399630892628057
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0027923583984375,
+            "rmse": 0.0013399630892628057
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=279.129 mel_ms=0.1584 inference_ms=365.774"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.011518478393554688,
+            "rmse": 0.0006737361959318189
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 6.725869687705279e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0006975531578063965,
+            "rmse": 2.7719842028522723e-05
+          },
+          "f0": {
+            "max_abs": 0.00274658203125,
+            "rmse": 0.0013742265247621438
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.00274658203125,
+            "rmse": 0.0013742265247621438
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=317.686 mel_ms=6.3521 inference_ms=393.856"
+        }
+      },
+      {
+        "name": "harmonic_44100",
+        "sample_rate": 44100,
+        "samples": 33112,
+        "frames": 76,
+        "torch_ms": 45.22479999286588,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0007146596908569336,
+            "rmse": 2.6892638927044203e-05
+          },
+          "f0": {
+            "max_abs": 0.0028839111328125,
+            "rmse": 0.001330266086977914
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0028839111328125,
+            "rmse": 0.001330266086977914
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=404.334 mel_ms=0.2049 inference_ms=380.596"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.012226104736328125,
+            "rmse": 0.0010266120122702548
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 8.08316705637075e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0007984638214111328,
+            "rmse": 2.9657961849980574e-05
+          },
+          "f0": {
+            "max_abs": 0.0032806396484375,
+            "rmse": 0.0014264186735169861
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0032806396484375,
+            "rmse": 0.0014264186735169861
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=286.851 mel_ms=8.3898 inference_ms=352.321"
+        }
+      },
+      {
+        "name": "harmonic_48000",
+        "sample_rate": 48000,
+        "samples": 36037,
+        "frames": 76,
+        "torch_ms": 13.75309999275487,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0007149577140808105,
+            "rmse": 2.6916176826517348e-05
+          },
+          "f0": {
+            "max_abs": 0.0028076171875,
+            "rmse": 0.0013325107391203323
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0028076171875,
+            "rmse": 0.0013325107391203323
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=281.173 mel_ms=0.1528 inference_ms=346.827"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.013685226440429688,
+            "rmse": 0.0010364147819030272
+          },
+          "mel_magnitude": {
+            "max_abs": 1.9073486328125e-06,
+            "rmse": 7.622960318061051e-08
+          },
+          "probabilities": {
+            "max_abs": 0.000708162784576416,
+            "rmse": 2.9726464005832895e-05
+          },
+          "f0": {
+            "max_abs": 0.0027313232421875,
+            "rmse": 0.001418180895830513
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.0027313232421875,
+            "rmse": 0.001418180895830513
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=277.172 mel_ms=8.4986 inference_ms=362.715"
+        }
+      },
+      {
+        "name": "noise",
+        "sample_rate": 16000,
+        "samples": 8147,
+        "frames": 51,
+        "torch_ms": 14.208199994754978,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 2.2687017917633057e-06,
+            "rmse": 3.5360264517574033e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=51 load_ms=283.997 mel_ms=0.1595 inference_ms=340.565"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 9.5367431640625e-07,
+            "rmse": 1.4465282110054774e-07
+          },
+          "mel_magnitude": {
+            "max_abs": 2.9802322387695312e-08,
+            "rmse": 4.707904093784278e-09
+          },
+          "probabilities": {
+            "max_abs": 2.2649765014648438e-06,
+            "rmse": 3.5269518917276523e-07
+          },
+          "f0": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "jointly_voiced_f0": null,
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=51 load_ms=274.198 mel_ms=0.7062 inference_ms=351.49"
+        }
+      },
+      {
+        "name": "voiced_unvoiced",
+        "sample_rate": 16000,
+        "samples": 48037,
+        "frames": 301,
+        "torch_ms": 48.543999990215525,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.00025135278701782227,
+            "rmse": 6.925072462614211e-06
+          },
+          "f0": {
+            "max_abs": 0.002410888671875,
+            "rmse": 0.0005195229437978814
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.002410888671875,
+            "rmse": 0.0007263193585310777
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=301 load_ms=292.391 mel_ms=0.3361 inference_ms=538.679"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.008593559265136719,
+            "rmse": 0.0003937733826415891
+          },
+          "mel_magnitude": {
+            "max_abs": 9.5367431640625e-07,
+            "rmse": 3.1621420893594815e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0002445727586746216,
+            "rmse": 7.558616624497232e-06
+          },
+          "f0": {
+            "max_abs": 0.002532958984375,
+            "rmse": 0.0005694474788665428
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.002532958984375,
+            "rmse": 0.0007961163842811854
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=301 load_ms=305.945 mel_ms=2.4941 inference_ms=539.58"
+        }
+      },
+      {
+        "name": "stereo",
+        "sample_rate": 16000,
+        "samples": 12000,
+        "frames": 76,
+        "torch_ms": 19.8956999956863,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0002771615982055664,
+            "rmse": 8.32945682130289e-06
+          },
+          "f0": {
+            "max_abs": 0.002166748046875,
+            "rmse": 0.0005711327938386752
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.002166748046875,
+            "rmse": 0.00095821289645236
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=301.088 mel_ms=0.1781 inference_ms=338.405"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.002666473388671875,
+            "rmse": 9.139511478289599e-05
+          },
+          "mel_magnitude": {
+            "max_abs": 7.152557373046875e-07,
+            "rmse": 2.0336693806051584e-08
+          },
+          "probabilities": {
+            "max_abs": 0.0002861097455024719,
+            "rmse": 8.432038556957787e-06
+          },
+          "f0": {
+            "max_abs": 0.00225830078125,
+            "rmse": 0.0005689266073355058
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.00225830078125,
+            "rmse": 0.0009545114869340803
+          },
+          "uv_mismatch": 0,
+          "uv_mismatch_details": [],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=76 load_ms=274.05 mel_ms=0.9824 inference_ms=346.218"
+        }
+      },
+      {
+        "name": "recording_0_jfk",
+        "sample_rate": 16000,
+        "samples": 176000,
+        "frames": 1101,
+        "torch_ms": 144.34329999494366,
+        "mel": {
+          "mel": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "mel_magnitude": {
+            "max_abs": 0.0,
+            "rmse": 0.0
+          },
+          "probabilities": {
+            "max_abs": 0.0019589662551879883,
+            "rmse": 2.731478937703996e-05
+          },
+          "f0": {
+            "max_abs": 199.2131805419922,
+            "rmse": 6.003775143238998
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.006439208984375,
+            "rmse": 0.0013674474922384377
+          },
+          "uv_mismatch": 1,
+          "uv_mismatch_details": [
+            {
+              "frame": 885,
+              "reference_confidence": 0.00598903838545084,
+              "cpp_confidence": 0.006002665963023901,
+              "reference_f0": 0.0,
+              "cpp_f0": 199.2131805419922
+            }
+          ],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1101 load_ms=291.705 mel_ms=0.7811 inference_ms=516.785"
+        },
+        "wav": {
+          "mel": {
+            "max_abs": 0.0030927658081054688,
+            "rmse": 5.4490454915557916e-05
+          },
+          "mel_magnitude": {
+            "max_abs": 1.430511474609375e-06,
+            "rmse": 2.4765539810612546e-08
+          },
+          "probabilities": {
+            "max_abs": 0.001959502696990967,
+            "rmse": 2.7314630488209963e-05
+          },
+          "f0": {
+            "max_abs": 199.21307373046875,
+            "rmse": 6.003771924564588
+          },
+          "jointly_voiced_f0": {
+            "max_abs": 0.006439208984375,
+            "rmse": 0.0013694531321026815
+          },
+          "uv_mismatch": 1,
+          "uv_mismatch_details": [
+            {
+              "frame": 885,
+              "reference_confidence": 0.00598903838545084,
+              "cpp_confidence": 0.006002658046782017,
+              "reference_f0": 0.0,
+              "cpp_f0": 199.21307373046875
+            }
+          ],
+          "timing": "ggml_vulkan: Found 1 Vulkan devices:\nggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none\nbackend=Vulkan0 frames=1101 load_ms=271.109 mel_ms=5.18 inference_ms=520.308"
+        }
+      }
+    ],
+    "note": "Non-16k input is resampled before the original Wav2Mel call to correct the wheel's original-length frame-count bug.",
+    "failed": [
+      "recording_0_jfk/mel",
+      "recording_0_jfk/wav"
+    ],
+    "passed": false,
+    "limits": {
+      "log_mel_max_abs": 0.02,
+      "log_mel_rmse": 0.002,
+      "linear_mel_max_abs": 1e-05,
+      "direct_probabilities_max_abs": 0.005,
+      "wav_probabilities_max_abs": 0.005,
+      "f0_max_abs_hz": 0.25,
+      "uv_mismatch": 0
+    }
+  }
+}

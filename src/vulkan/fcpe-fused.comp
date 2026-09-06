@@ -1,0 +1,66 @@
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. See LICENSE or https://mozilla.org/MPL/2.0/.
+
+#version 450
+#extension GL_EXT_control_flow_attributes : require
+layout(local_size_x = 512) in;
+// 0: layernorm affine, 1: affine, 2: sigmoid GLU,
+// 3: bias sigmoid, 4: bias SiLU, 5: bias leaky ReLU.
+layout(constant_id = 0) const uint MODE = 0;
+layout(binding = 0) readonly buffer A { float a[]; };
+layout(binding = 1) readonly buffer B { float b[]; };
+layout(binding = 2) readonly buffer C { float c[]; };
+layout(binding = 3) writeonly buffer D { float d[]; };
+layout(push_constant) uniform Params {
+    uint count; uint cols; uint stride_a; uint stride_b;
+    uint offset_a; uint offset_b; uint offset_c; uint offset_d;
+    float epsilon; float alpha;
+} p;
+shared vec2 sums[512];
+void main() {
+    uint tid = gl_LocalInvocationID.x;
+    uint group = gl_WorkGroupID.x + gl_WorkGroupID.y * 65535;
+    if (MODE == 0) {
+        uint row = group;
+        if (row >= p.count / p.cols) return;
+        vec2 sum = vec2(0);
+        for (uint i = tid; i < p.cols; i += 512) {
+            float x = a[p.offset_a + row*p.stride_a + i];
+            sum += vec2(x, x*x);
+        }
+        sums[tid] = sum;
+        barrier();
+        [[unroll]] for (uint s = 256; s > 0; s >>= 1) {
+            if (tid < s) sums[tid] += sums[tid+s];
+            barrier();
+        }
+        float mean = sums[0].x / p.cols;
+        float variance = sums[0].y / p.cols - mean*mean;
+        float inv = inversesqrt(variance + p.epsilon);
+        for (uint i = tid; i < p.cols; i += 512) {
+            precise float v = (a[p.offset_a + row*p.stride_a + i] - mean)*inv;
+            precise float scaled = v*b[p.offset_b+i];
+            d[p.offset_d + row*p.cols+i] = scaled+c[p.offset_c+i];
+        }
+    } else {
+        uint idx = group*512+tid;
+        if (idx >= p.count) return;
+        uint col = idx%p.cols, row=idx/p.cols;
+        float x = a[p.offset_a+row*p.stride_a+col];
+        float y = b[p.offset_b+row*p.stride_b+col];
+        float value;
+        if (MODE == 1) {
+            precise float scaled = x*y;
+            value = scaled+c[p.offset_c+col];
+        } else if (MODE == 2) {
+            value = y/(1.0+exp(-x));
+        } else {
+            precise float v = x+y;
+            if (MODE == 3) value = 1.0/(1.0+exp(-v));
+            else if (MODE == 4) value = v/(1.0+exp(-v));
+            else value = v >= 0.0 ? v : v*p.alpha;
+        }
+        d[p.offset_d+idx] = value;
+    }
+}

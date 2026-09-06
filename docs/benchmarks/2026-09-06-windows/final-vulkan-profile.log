@@ -1,0 +1,72 @@
+Vulkan Timings:
+ADD: 35 x 607.7 us = 21269.5 us
+CONT: 28 x 655.187 us = 18345.2 us
+CONV_2D_DW: 6 x 712.192 us = 4273.15 us
+GROUP_NORM: 1 x 693.248 us = 693.248 us
+IM2COL: 2 x 644.096 us = 1288.19 us
+LEAKY_RELU: 1 x 343.04 us = 343.04 us
+MUL: 14 x 532.333 us = 7452.67 us
+MUL_MAT f32 m=2048 n=1101 k=512: 6 x 2473.13 us = 14838.8 us (932.708 GFLOPS/s)
+MUL_MAT f32 m=360 n=1101 k=512: 1 x 444.416 us = 444.416 us (912.38 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1024: 6 x 958.368 us = 5750.21 us (1204.05 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1536: 1 x 976.896 us = 976.896 us (1772.1 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=384: 1 x 518.144 us = 518.144 us (834.454 GFLOPS/s)
+NORM: 7 x 340.553 us = 2383.87 us
+SIGMOID: 7 x 696.32 us = 4874.24 us
+SILU: 6 x 733.621 us = 4401.73 us
+Total time: 87853.3 us.
+----------------
+Vulkan Timings:
+ADD: 35 x 602.398 us = 21083.9 us
+CONT: 28 x 704.715 us = 19732 us
+CONV_2D_DW: 6 x 772.778 us = 4636.67 us
+GROUP_NORM: 1 x 980.992 us = 980.992 us
+IM2COL: 2 x 855.552 us = 1711.1 us
+LEAKY_RELU: 1 x 340.992 us = 340.992 us
+MUL: 14 x 518.656 us = 7261.18 us
+MUL_MAT f32 m=2048 n=1101 k=512: 6 x 2718.55 us = 16311.3 us (848.508 GFLOPS/s)
+MUL_MAT f32 m=360 n=1101 k=512: 1 x 1125.38 us = 1125.38 us (360.303 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1024: 6 x 1040.06 us = 6240.35 us (1109.47 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1536: 1 x 2356.45 us = 2356.45 us (734.648 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=384: 1 x 519.168 us = 519.168 us (832.808 GFLOPS/s)
+NORM: 7 x 343.186 us = 2402.3 us
+SIGMOID: 7 x 674.377 us = 4720.64 us
+SILU: 6 x 685.381 us = 4112.29 us
+Total time: 93534.8 us.
+----------------
+Vulkan Timings:
+ADD: 35 x 604.068 us = 21142.4 us
+CONT: 28 x 700.57 us = 19616 us
+CONV_2D_DW: 6 x 715.434 us = 4292.61 us
+GROUP_NORM: 1 x 692.224 us = 692.224 us
+IM2COL: 2 x 643.584 us = 1287.17 us
+LEAKY_RELU: 1 x 342.016 us = 342.016 us
+MUL: 14 x 531.09 us = 7435.26 us
+MUL_MAT f32 m=2048 n=1101 k=512: 6 x 2644.31 us = 15865.9 us (872.33 GFLOPS/s)
+MUL_MAT f32 m=360 n=1101 k=512: 1 x 847.872 us = 847.872 us (478.228 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1024: 6 x 1063.5 us = 6380.99 us (1085.02 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1536: 1 x 2180.22 us = 2180.22 us (794.028 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=384: 1 x 520.192 us = 520.192 us (831.168 GFLOPS/s)
+NORM: 7 x 340.26 us = 2381.82 us
+SIGMOID: 7 x 653.458 us = 4574.21 us
+SILU: 6 x 704.096 us = 4224.58 us
+Total time: 91783.4 us.
+----------------
+Vulkan Timings:
+ADD: 35 x 602.739 us = 21095.9 us
+CONT: 28 x 676.798 us = 18950.4 us
+CONV_2D_DW: 6 x 736.768 us = 4420.61 us
+GROUP_NORM: 1 x 690.176 us = 690.176 us
+IM2COL: 2 x 642.56 us = 1285.12 us
+LEAKY_RELU: 1 x 340.992 us = 340.992 us
+MUL: 14 x 508.635 us = 7120.9 us
+MUL_MAT f32 m=2048 n=1101 k=512: 6 x 2759.34 us = 16556 us (835.965 GFLOPS/s)
+MUL_MAT f32 m=360 n=1101 k=512: 1 x 1114.11 us = 1114.11 us (363.946 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1024: 6 x 1013.1 us = 6078.59 us (1139 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1536: 1 x 2448.96 us = 2448.96 us (706.896 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=384: 1 x 510.976 us = 510.976 us (846.159 GFLOPS/s)
+NORM: 7 x 340.26 us = 2381.82 us
+SIGMOID: 7 x 619.227 us = 4334.59 us
+SILU: 6 x 685.034 us = 4110.21 us
+Total time: 91439.3 us.
+Vulkan0 mean=93.8608 ms first=415.575 ms nodes=174 splits=1 CPU=0 GPU=122 compute_MiB=22.0415

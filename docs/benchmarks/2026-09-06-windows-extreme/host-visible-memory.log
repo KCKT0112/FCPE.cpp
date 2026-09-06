@@ -1,0 +1,9 @@
+ggml_vulkan: Found 1 Vulkan devices:
+ggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none
+FCPE Vulkan allocation: bytes=43572544 type=4 heap=0 flags=7
+FCPE Vulkan allocation: bytes=1440 type=3 heap=1 flags=14
+FCPE Vulkan allocation: bytes=262656 type=3 heap=1 flags=14
+FCPE Vulkan allocation: bytes=18038784 type=4 heap=0 flags=7
+FCPE Vulkan allocation: bytes=1024 type=4 heap=0 flags=7
+FCPE Vulkan allocation: bytes=1585440 type=3 heap=1 flags=14
+Vulkan0 mean=75.0264 ms first=303.785 ms nodes=162 splits=1 CPU=0 GPU=110 compute_MiB=17.7407

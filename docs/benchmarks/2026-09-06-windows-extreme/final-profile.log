@@ -1,0 +1,60 @@
+ggml_vulkan: Found 1 Vulkan devices:
+ggml_vulkan: 0 = NVIDIA GeForce RTX 4060 (NVIDIA) | uma: 0 | fp16: 0 | bf16: 1 | fp4: 0 | warp size: 32 | shared memory: 49152 | int dot: 1 | matrix cores: none
+----------------
+Vulkan Timings:
+ADD: 20 x 16.281 us = 325.632 us
+CONT: 16 x 9.802 us = 156.832 us
+CONV_2D_DW: 6 x 96.085 us = 576.512 us
+FCPE_FUSED ADD: 8 x 14.848 us = 118.784 us
+FCPE_FUSED MUL: 1 x 10.24 us = 10.24 us
+FCPE_FUSED NORM: 7 x 22.528 us = 157.696 us
+FCPE_FUSED SIGMOID: 6 x 15.53 us = 93.184 us
+GROUP_NORM: 1 x 78.848 us = 78.848 us
+IM2COL: 2 x 18.944 us = 37.888 us
+MUL_MAT f32 m=2048 n=1101 k=512: 6 x 312.32 us = 1873.92 us (7385.72 GFLOPS/s)
+MUL_MAT f32 m=360 n=1101 k=512: 1 x 75.776 us = 75.776 us (5350.99 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1024: 6 x 154.837 us = 929.024 us (7452.46 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1536: 1 x 231.424 us = 231.424 us (7480.47 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=384: 1 x 70.656 us = 70.656 us (6119.33 GFLOPS/s)
+SIGMOID: 1 x 11.264 us = 11.264 us
+SILU: 6 x 388.736 us = 2332.42 us
+Total time: 7080.1 us.
+----------------
+Vulkan Timings:
+ADD: 20 x 15.952 us = 319.04 us
+CONT: 16 x 9.816 us = 157.056 us
+CONV_2D_DW: 6 x 95.744 us = 574.464 us
+FCPE_FUSED ADD: 8 x 14.72 us = 117.76 us
+FCPE_FUSED MUL: 1 x 10.24 us = 10.24 us
+FCPE_FUSED NORM: 7 x 22.528 us = 157.696 us
+FCPE_FUSED SIGMOID: 6 x 14.336 us = 86.016 us
+GROUP_NORM: 1 x 77.824 us = 77.824 us
+IM2COL: 2 x 18.432 us = 36.864 us
+MUL_MAT f32 m=2048 n=1101 k=512: 6 x 314.197 us = 1885.18 us (7341.59 GFLOPS/s)
+MUL_MAT f32 m=360 n=1101 k=512: 1 x 79.872 us = 79.872 us (5076.58 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1024: 6 x 155.136 us = 930.816 us (7438.11 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1536: 1 x 235.968 us = 235.968 us (7336.42 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=384: 1 x 68.608 us = 68.608 us (6301.99 GFLOPS/s)
+SIGMOID: 1 x 10.24 us = 10.24 us
+SILU: 6 x 17.237 us = 103.424 us
+Total time: 4851.07 us.
+----------------
+Vulkan Timings:
+ADD: 20 x 16.169 us = 323.392 us
+CONT: 16 x 9.574 us = 153.184 us
+CONV_2D_DW: 6 x 95.573 us = 573.44 us
+FCPE_FUSED ADD: 8 x 14.976 us = 119.808 us
+FCPE_FUSED MUL: 1 x 10.24 us = 10.24 us
+FCPE_FUSED NORM: 7 x 22.528 us = 157.696 us
+FCPE_FUSED SIGMOID: 6 x 14.336 us = 86.016 us
+GROUP_NORM: 1 x 78.848 us = 78.848 us
+IM2COL: 2 x 18.432 us = 36.864 us
+MUL_MAT f32 m=2048 n=1101 k=512: 6 x 312.832 us = 1876.99 us (7373.64 GFLOPS/s)
+MUL_MAT f32 m=360 n=1101 k=512: 1 x 78.848 us = 78.848 us (5142.51 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1024: 6 x 154.965 us = 929.792 us (7446.3 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=1536: 1 x 234.688 us = 234.688 us (7376.43 GFLOPS/s)
+MUL_MAT f32 m=512 n=1101 k=384: 1 x 67.584 us = 67.584 us (6397.48 GFLOPS/s)
+SIGMOID: 1 x 11.264 us = 11.264 us
+SILU: 6 x 17.237 us = 103.424 us
+Total time: 4842.08 us.
+Vulkan0 mean=6.6715 ms first=506.255 ms nodes=162 splits=1 CPU=0 GPU=110 compute_MiB=17.7407
